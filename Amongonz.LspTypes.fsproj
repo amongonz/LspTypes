@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Base.fs" />
+    <Compile Include="Generated.fs" />
+  </ItemGroup>
+
+  <Target Name="GenerateTypes">
+    <ItemGroup>
+      <_LspTypes Include="Generated.fs" />
+    </ItemGroup>
+
+    <Exec Command="dotnet fsi generate-lsp-types.fsx &gt; &quot;%(_LspTypes.FullPath)&quot;" />
+  </Target>
+</Project>

@@ -114,6 +114,8 @@ let (|BaseAlias|RefAlias|ComplexAlias|BrokenAlias|) (aliasModel: LspMetaModel.Ty
 
 printfn $"// This file was auto-generated."
 printfn $"namespace rec Amongonz.LspTypes"
+printfn $""
+printfn $"#nowarn \"44\" // Obsolete warnings"
 
 //
 // Enumerations
@@ -269,6 +271,13 @@ for structModel in metaModel.Structures do
         for line in docLines prop.Documentation do
             printfn $"    /// %s{line}"
 
+        match prop.Deprecated with
+        | None -> ()
+        | Some msg -> printfn $"    [<global.System.Obsolete(%A{msg})>]"
+
+        let name = uppercaseFirst prop.Name
+        printfn $"    member _.{name} ="
+
         let propertyNeedsSpecialization, getValue =
             match TypeKind.FromKind prop.Type.Kind with
             | KindBase ->
@@ -305,9 +314,6 @@ for structModel in metaModel.Structures do
             | kind -> failwith $"Unhandled type kind: %A{kind}"
 
         structNeedsSpecialization <- structNeedsSpecialization || propertyNeedsSpecialization
-        let name = uppercaseFirst prop.Name
-
-        printfn $"    member _.{name} ="
 
         if propertyNeedsSpecialization then
             printfn $"        // Complex type kind: %s{prop.Type.Kind}."
@@ -391,6 +397,10 @@ for aliasModel in metaModel.TypeAliases do
 
     for line in docLines aliasModel.Documentation do
         printfn $"/// {line}"
+
+    match aliasModel.Deprecated with
+    | None -> ()
+    | Some msg -> printfn $"[<global.System.Obsolete(%A{msg})>]"
 
     match aliasModel with
     | BaseAlias baseType -> printfn $"type %s{aliasModel.Name} = %s{baseType.FSharpName}"

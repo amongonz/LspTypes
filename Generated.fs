@@ -1,6 +1,8 @@
 // This file was auto-generated.
 namespace rec Amongonz.LspTypes
 
+#nowarn "44" // Obsolete warnings
+
 /// A set of predefined token types. This set is not fixed
 /// an clients can specify additional token types via the
 /// corresponding client capabilities.
@@ -4135,6 +4137,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// if no folder is open.
     /// 
     /// @deprecated in favour of rootUri.
+    [<global.System.Obsolete("in favour of rootUri.")>]
     member _.RootPath =
         // Complex type kind: or.
 
@@ -4147,6 +4150,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// `rootUri` wins.
     /// 
     /// @deprecated in favour of workspaceFolders.
+    [<global.System.Obsolete("in favour of workspaceFolders.")>]
     member _.RootUri =
         // Complex type kind: or.
 
@@ -4764,6 +4768,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
 
     /// Indicates if this item is deprecated.
     /// @deprecated Use `tags` instead.
+    [<global.System.Obsolete("Use `tags` instead.")>]
     member _.Deprecated =
         match element.TryGetProperty("deprecated") with
         | false, _ -> ValueNone
@@ -5521,6 +5526,7 @@ type SymbolInformation(element: global.System.Text.Json.JsonElement) =
     /// Indicates if this symbol is deprecated.
     /// 
     /// @deprecated Use tags instead
+    [<global.System.Obsolete("Use tags instead")>]
     member _.Deprecated =
         match element.TryGetProperty("deprecated") with
         | false, _ -> ValueNone
@@ -5609,6 +5615,7 @@ type DocumentSymbol(element: global.System.Text.Json.JsonElement) =
     /// Indicates if this symbol is deprecated.
     /// 
     /// @deprecated Use tags instead
+    [<global.System.Obsolete("Use tags instead")>]
     member _.Deprecated =
         match element.TryGetProperty("deprecated") with
         | false, _ -> ValueNone
@@ -8715,6 +8722,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// if no folder is open.
     /// 
     /// @deprecated in favour of rootUri.
+    [<global.System.Obsolete("in favour of rootUri.")>]
     member _.RootPath =
         // Complex type kind: or.
 
@@ -8727,6 +8735,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// `rootUri` wins.
     /// 
     /// @deprecated in favour of workspaceFolders.
+    [<global.System.Obsolete("in favour of workspaceFolders.")>]
     member _.RootUri =
         // Complex type kind: or.
 
@@ -13580,6 +13589,7 @@ type TextDocumentContentChangeEvent(element: global.System.Text.Json.JsonElement
 /// 
 /// Note that markdown strings will be sanitized - that means html will be escaped.
 /// @deprecated use MarkupContent instead.
+[<global.System.Obsolete("use MarkupContent instead.")>]
 [<global.FSharp.Core.Struct>]
 type MarkedString(element: global.System.Text.Json.JsonElement) =
     // Complex type kind: or.

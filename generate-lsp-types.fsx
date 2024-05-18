@@ -310,7 +310,7 @@ for structModel in metaModel.Structures do
         printfn $"    member _.{name} ="
 
         if propertyNeedsSpecialization then
-            printfn $"        // Requires specialization: %0A{prop.Type.Kind}"
+            printfn $"        // Complex type kind: %s{prop.Type.Kind}."
             printfn $""
 
         if defaultArg prop.Optional false then
@@ -398,7 +398,7 @@ for aliasModel in metaModel.TypeAliases do
     | ComplexAlias ->
         printfn $"[<%s{fsharpCoreNs}.Struct>]"
         printfn $"type %s{aliasModel.Name}(element: %s{jsonNs}.JsonElement) ="
-        printfn $"    // Requires specialization: %A{aliasModel.Type.Kind}."
+        printfn $"    // Complex type kind: %s{aliasModel.Type.Kind}."
         printfn $""
         printfn $"    member _.AsElement = element"
         printfn $""

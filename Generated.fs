@@ -1538,7 +1538,7 @@ type ImplementationRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -1609,7 +1609,7 @@ type TypeDefinitionRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -1680,7 +1680,7 @@ type ConfigurationParams(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -1765,7 +1765,7 @@ type DocumentColorRegistrationOptions(element: global.System.Text.Json.JsonEleme
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -1861,7 +1861,7 @@ type ColorPresentation(element: global.System.Text.Json.JsonElement) =
     /// An optional array of additional {@link TextEdit text edits} that are applied when
     /// selecting this color presentation. Edits must not overlap with the main {@link ColorPresentation.textEdit edit} nor with themselves.
     member _.AdditionalTextEdits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("additionalTextEdits") with
         | false, _ -> ValueNone
@@ -1897,7 +1897,7 @@ type TextDocumentRegistrationOptions(element: global.System.Text.Json.JsonElemen
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2031,7 +2031,7 @@ type FoldingRangeRegistrationOptions(element: global.System.Text.Json.JsonElemen
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2102,7 +2102,7 @@ type DeclarationRegistrationOptions(element: global.System.Text.Json.JsonElement
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2129,7 +2129,7 @@ type SelectionRangeParams(element: global.System.Text.Json.JsonElement) =
 
     /// The positions inside the text document.
     member _.Positions =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("positions")
         prop
@@ -2188,7 +2188,7 @@ type SelectionRangeRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2302,7 +2302,7 @@ type CallHierarchyItem(element: global.System.Text.Json.JsonElement) =
 
     /// Tags for this item.
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -2350,7 +2350,7 @@ type CallHierarchyRegistrationOptions(element: global.System.Text.Json.JsonEleme
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2422,7 +2422,7 @@ type CallHierarchyIncomingCall(element: global.System.Text.Json.JsonElement) =
     /// The ranges at which the calls appear. This is relative to the caller
     /// denoted by {@link CallHierarchyIncomingCall.from `this.from`}.
     member _.FromRanges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("fromRanges")
         prop
@@ -2488,7 +2488,7 @@ type CallHierarchyOutgoingCall(element: global.System.Text.Json.JsonElement) =
     /// passed to {@link CallHierarchyItemProvider.provideCallHierarchyOutgoingCalls `provideCallHierarchyOutgoingCalls`}
     /// and not {@link CallHierarchyOutgoingCall.to `this.to`}.
     member _.FromRanges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("fromRanges")
         prop
@@ -2553,7 +2553,7 @@ type SemanticTokens(element: global.System.Text.Json.JsonElement) =
 
     /// The actual tokens.
     member _.Data =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("data")
         prop
@@ -2567,7 +2567,7 @@ type SemanticTokensPartialResult(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Data =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("data")
         prop
@@ -2583,7 +2583,7 @@ type SemanticTokensRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2596,7 +2596,7 @@ type SemanticTokensRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// Server supports providing semantic tokens for a specific range
     /// of a document.
     member _.Range =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("range") with
         | false, _ -> ValueNone
@@ -2604,7 +2604,7 @@ type SemanticTokensRegistrationOptions(element: global.System.Text.Json.JsonElem
 
     /// Server supports providing semantic tokens for a full document.
     member _.Full =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("full") with
         | false, _ -> ValueNone
@@ -2683,7 +2683,7 @@ type SemanticTokensDelta(element: global.System.Text.Json.JsonElement) =
 
     /// The semantic token edits to transform a previous result into a new result.
     member _.Edits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("edits")
         prop
@@ -2697,7 +2697,7 @@ type SemanticTokensDeltaPartialResult(element: global.System.Text.Json.JsonEleme
     member _.AsElement = element
 
     member _.Edits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("edits")
         prop
@@ -2885,7 +2885,7 @@ type LinkedEditingRanges(element: global.System.Text.Json.JsonElement) =
     /// A list of ranges that can be edited together. The ranges must have
     /// identical length and contain identical text content. The ranges cannot overlap.
     member _.Ranges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("ranges")
         prop
@@ -2908,7 +2908,7 @@ type LinkedEditingRangeRegistrationOptions(element: global.System.Text.Json.Json
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -2933,7 +2933,7 @@ type CreateFilesParams(element: global.System.Text.Json.JsonElement) =
 
     /// An array of all files/folders created in this operation.
     member _.Files =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("files")
         prop
@@ -2959,7 +2959,7 @@ type WorkspaceEdit(element: global.System.Text.Json.JsonElement) =
 
     /// Holds changes to existing resources.
     member _.Changes =
-        // Requires specialization: "map"
+        // Complex type kind: map.
 
         match element.TryGetProperty("changes") with
         | false, _ -> ValueNone
@@ -2976,7 +2976,7 @@ type WorkspaceEdit(element: global.System.Text.Json.JsonElement) =
     /// If a client neither supports `documentChanges` nor `workspace.workspaceEdit.resourceOperations` then
     /// only plain `TextEdit`s using the `changes` property are supported.
     member _.DocumentChanges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("documentChanges") with
         | false, _ -> ValueNone
@@ -2989,7 +2989,7 @@ type WorkspaceEdit(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.ChangeAnnotations =
-        // Requires specialization: "map"
+        // Complex type kind: map.
 
         match element.TryGetProperty("changeAnnotations") with
         | false, _ -> ValueNone
@@ -3007,7 +3007,7 @@ type FileOperationRegistrationOptions(element: global.System.Text.Json.JsonEleme
 
     /// The actual filters.
     member _.Filters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("filters")
         prop
@@ -3026,7 +3026,7 @@ type RenameFilesParams(element: global.System.Text.Json.JsonElement) =
     /// An array of all files/folders renamed in this operation. When a folder is renamed, only
     /// the folder will be included, and not its children.
     member _.Files =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("files")
         prop
@@ -3044,7 +3044,7 @@ type DeleteFilesParams(element: global.System.Text.Json.JsonElement) =
 
     /// An array of all files/folders deleted in this operation.
     member _.Files =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("files")
         prop
@@ -3159,7 +3159,7 @@ type MonikerRegistrationOptions(element: global.System.Text.Json.JsonElement) =
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -3225,7 +3225,7 @@ type TypeHierarchyItem(element: global.System.Text.Json.JsonElement) =
 
     /// Tags for this item.
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -3277,7 +3277,7 @@ type TypeHierarchyRegistrationOptions(element: global.System.Text.Json.JsonEleme
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -3437,7 +3437,7 @@ type InlineValueRegistrationOptions(element: global.System.Text.Json.JsonElement
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -3513,7 +3513,7 @@ type InlayHint(element: global.System.Text.Json.JsonElement) =
     /// 
     /// *Note* that neither the string nor the label part can be empty.
     member _.Label =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("label")
         prop
@@ -3531,7 +3531,7 @@ type InlayHint(element: global.System.Text.Json.JsonElement) =
     /// hint (or its nearest variant) is now part of the document and the inlay
     /// hint itself is now obsolete.
     member _.TextEdits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("textEdits") with
         | false, _ -> ValueNone
@@ -3539,7 +3539,7 @@ type InlayHint(element: global.System.Text.Json.JsonElement) =
 
     /// The tooltip text when you hover over this item.
     member _.Tooltip =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("tooltip") with
         | false, _ -> ValueNone
@@ -3592,7 +3592,7 @@ type InlayHintRegistrationOptions(element: global.System.Text.Json.JsonElement) 
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -3678,7 +3678,7 @@ type DocumentDiagnosticReportPartialResult(element: global.System.Text.Json.Json
     member _.AsElement = element
 
     member _.RelatedDocuments =
-        // Requires specialization: "map"
+        // Complex type kind: map.
 
         let prop = element.GetProperty("relatedDocuments")
         prop
@@ -3717,7 +3717,7 @@ type DiagnosticRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -3768,7 +3768,7 @@ type WorkspaceDiagnosticParams(element: global.System.Text.Json.JsonElement) =
     /// The currently known diagnostic reports with their
     /// previous result ids.
     member _.PreviousResultIds =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("previousResultIds")
         prop
@@ -3797,7 +3797,7 @@ type WorkspaceDiagnosticReport(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -3813,7 +3813,7 @@ type WorkspaceDiagnosticReportPartialResult(element: global.System.Text.Json.Jso
     member _.AsElement = element
 
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -3836,7 +3836,7 @@ type DidOpenNotebookDocumentParams(element: global.System.Text.Json.JsonElement)
     /// The text documents that represent the content
     /// of a notebook cell.
     member _.CellTextDocuments =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("cellTextDocuments")
         prop
@@ -3927,7 +3927,7 @@ type DidCloseNotebookDocumentParams(element: global.System.Text.Json.JsonElement
     /// The text documents that represent the content
     /// of a notebook cell that got closed.
     member _.CellTextDocuments =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("cellTextDocuments")
         prop
@@ -3997,7 +3997,7 @@ type InlineCompletionList(element: global.System.Text.Json.JsonElement) =
 
     /// The inline completion items
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -4015,7 +4015,7 @@ type InlineCompletionItem(element: global.System.Text.Json.JsonElement) =
 
     /// The text to replace the range with. Must be set.
     member _.InsertText =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("insertText")
         prop
@@ -4052,7 +4052,7 @@ type InlineCompletionRegistrationOptions(element: global.System.Text.Json.JsonEl
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -4072,7 +4072,7 @@ type RegistrationParams(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Registrations =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("registrations")
         prop
@@ -4085,7 +4085,7 @@ type UnregistrationParams(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Unregisterations =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("unregisterations")
         prop
@@ -4103,7 +4103,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// Is `null` if the process has not been started by another process.
     /// If the parent process is not alive then the server should exit.
     member _.ProcessId =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("processId")
         prop
@@ -4112,7 +4112,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.ClientInfo =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("clientInfo") with
         | false, _ -> ValueNone
@@ -4136,7 +4136,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @deprecated in favour of rootUri.
     member _.RootPath =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("rootPath") with
         | false, _ -> ValueNone
@@ -4148,7 +4148,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @deprecated in favour of workspaceFolders.
     member _.RootUri =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("rootUri")
         prop
@@ -4178,7 +4178,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.6.0
     member _.WorkspaceFolders =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("workspaceFolders") with
         | false, _ -> ValueNone
@@ -4201,7 +4201,7 @@ type InitializeResult(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.ServerInfo =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("serverInfo") with
         | false, _ -> ValueNone
@@ -4269,7 +4269,7 @@ type DidChangeConfigurationRegistrationOptions(element: global.System.Text.Json.
     member _.AsElement = element
 
     member _.Section =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("section") with
         | false, _ -> ValueNone
@@ -4323,7 +4323,7 @@ type ShowMessageRequestParams(element: global.System.Text.Json.JsonElement) =
 
     /// The message action items to present.
     member _.Actions =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("actions") with
         | false, _ -> ValueNone
@@ -4424,7 +4424,7 @@ type DidChangeTextDocumentParams(element: global.System.Text.Json.JsonElement) =
     /// - apply the `TextDocumentContentChangeEvent`s in a single notification in the order
     ///   you receive them.
     member _.ContentChanges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("contentChanges")
         prop
@@ -4445,7 +4445,7 @@ type TextDocumentChangeRegistrationOptions(element: global.System.Text.Json.Json
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -4512,7 +4512,7 @@ type TextDocumentSaveRegistrationOptions(element: global.System.Text.Json.JsonEl
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -4593,7 +4593,7 @@ type DidChangeWatchedFilesParams(element: global.System.Text.Json.JsonElement) =
 
     /// The actual file events.
     member _.Changes =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("changes")
         prop
@@ -4608,7 +4608,7 @@ type DidChangeWatchedFilesRegistrationOptions(element: global.System.Text.Json.J
 
     /// The watchers to register.
     member _.Watchers =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("watchers")
         prop
@@ -4636,7 +4636,7 @@ type PublishDiagnosticsParams(element: global.System.Text.Json.JsonElement) =
 
     /// An array of diagnostic information items.
     member _.Diagnostics =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("diagnostics")
         prop
@@ -4741,7 +4741,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -4756,7 +4756,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
 
     /// A human-readable string that represents a doc-comment.
     member _.Documentation =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentation") with
         | false, _ -> ValueNone
@@ -4853,7 +4853,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0 additional type `InsertReplaceEdit`
     member _.TextEdit =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("textEdit") with
         | false, _ -> ValueNone
@@ -4882,7 +4882,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     /// (for example adding an import statement at the top of the file if the completion item will
     /// insert an unqualified type).
     member _.AdditionalTextEdits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("additionalTextEdits") with
         | false, _ -> ValueNone
@@ -4892,7 +4892,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     /// then type that character. *Note* that all commit characters should have `length=1` and that superfluous
     /// characters will be ignored.
     member _.CommitCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("commitCharacters") with
         | false, _ -> ValueNone
@@ -4944,7 +4944,7 @@ type CompletionList(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.ItemDefaults =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("itemDefaults") with
         | false, _ -> ValueNone
@@ -4952,7 +4952,7 @@ type CompletionList(element: global.System.Text.Json.JsonElement) =
 
     /// The completion items.
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -4968,7 +4968,7 @@ type CompletionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -4982,7 +4982,7 @@ type CompletionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// If code complete should automatically be trigger on characters not being valid inside
     /// an identifier (for example `.` in JavaScript) list them in `triggerCharacters`.
     member _.TriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("triggerCharacters") with
         | false, _ -> ValueNone
@@ -4997,7 +4997,7 @@ type CompletionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// 
     /// @since 3.2.0
     member _.AllCommitCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("allCommitCharacters") with
         | false, _ -> ValueNone
@@ -5015,7 +5015,7 @@ type CompletionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// 
     /// @since 3.17.0
     member _.CompletionItem =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("completionItem") with
         | false, _ -> ValueNone
@@ -5070,7 +5070,7 @@ type Hover(element: global.System.Text.Json.JsonElement) =
 
     /// The hover&apos;s content
     member _.Contents =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("contents")
         prop
@@ -5093,7 +5093,7 @@ type HoverRegistrationOptions(element: global.System.Text.Json.JsonElement) =
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5162,7 +5162,7 @@ type SignatureHelp(element: global.System.Text.Json.JsonElement) =
 
     /// One or more signatures.
     member _.Signatures =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("signatures")
         prop
@@ -5204,14 +5204,14 @@ type SignatureHelpRegistrationOptions(element: global.System.Text.Json.JsonEleme
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
 
     /// List of characters that trigger signature help automatically.
     member _.TriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("triggerCharacters") with
         | false, _ -> ValueNone
@@ -5224,7 +5224,7 @@ type SignatureHelpRegistrationOptions(element: global.System.Text.Json.JsonEleme
     /// 
     /// @since 3.15.0
     member _.RetriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("retriggerCharacters") with
         | false, _ -> ValueNone
@@ -5291,7 +5291,7 @@ type DefinitionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5365,7 +5365,7 @@ type ReferenceRegistrationOptions(element: global.System.Text.Json.JsonElement) 
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5463,7 +5463,7 @@ type DocumentHighlightRegistrationOptions(element: global.System.Text.Json.JsonE
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5553,7 +5553,7 @@ type SymbolInformation(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -5600,7 +5600,7 @@ type DocumentSymbol(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -5629,7 +5629,7 @@ type DocumentSymbol(element: global.System.Text.Json.JsonElement) =
 
     /// Children of this symbol, e.g. properties of a class.
     member _.Children =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("children") with
         | false, _ -> ValueNone
@@ -5646,7 +5646,7 @@ type DocumentSymbolRegistrationOptions(element: global.System.Text.Json.JsonElem
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5743,7 +5743,7 @@ type Command(element: global.System.Text.Json.JsonElement) =
     /// Arguments that the command handler should be
     /// invoked with.
     member _.Arguments =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("arguments") with
         | false, _ -> ValueNone
@@ -5775,7 +5775,7 @@ type CodeAction(element: global.System.Text.Json.JsonElement) =
 
     /// The diagnostics that this code action resolves.
     member _.Diagnostics =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("diagnostics") with
         | false, _ -> ValueNone
@@ -5809,7 +5809,7 @@ type CodeAction(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.Disabled =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("disabled") with
         | false, _ -> ValueNone
@@ -5849,7 +5849,7 @@ type CodeActionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -5859,7 +5859,7 @@ type CodeActionRegistrationOptions(element: global.System.Text.Json.JsonElement)
     /// The list of kinds may be generic, such as `CodeActionKind.Refactor`, or the server
     /// may list out every specific kind they provide.
     member _.CodeActionKinds =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("codeActionKinds") with
         | false, _ -> ValueNone
@@ -5934,7 +5934,7 @@ type WorkspaceSymbol(element: global.System.Text.Json.JsonElement) =
     /// 
     /// See SymbolInformation#location for more details.
     member _.Location =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("location")
         prop
@@ -5960,7 +5960,7 @@ type WorkspaceSymbol(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -6096,7 +6096,7 @@ type CodeLensRegistrationOptions(element: global.System.Text.Json.JsonElement) =
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6217,7 +6217,7 @@ type DocumentLinkRegistrationOptions(element: global.System.Text.Json.JsonElemen
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6278,7 +6278,7 @@ type DocumentFormattingRegistrationOptions(element: global.System.Text.Json.Json
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6342,7 +6342,7 @@ type DocumentRangeFormattingRegistrationOptions(element: global.System.Text.Json
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6374,7 +6374,7 @@ type DocumentRangesFormattingParams(element: global.System.Text.Json.JsonElement
 
     /// The ranges to format
     member _.Ranges =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("ranges")
         prop
@@ -6453,7 +6453,7 @@ type DocumentOnTypeFormattingRegistrationOptions(element: global.System.Text.Jso
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6465,7 +6465,7 @@ type DocumentOnTypeFormattingRegistrationOptions(element: global.System.Text.Jso
 
     /// More trigger characters.
     member _.MoreTriggerCharacter =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("moreTriggerCharacter") with
         | false, _ -> ValueNone
@@ -6532,7 +6532,7 @@ type RenameRegistrationOptions(element: global.System.Text.Json.JsonElement) =
     /// A document selector to identify the scope of the registration. If set to null
     /// the document selector provided on the client side will be used.
     member _.DocumentSelector =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("documentSelector")
         prop
@@ -6598,7 +6598,7 @@ type ExecuteCommandParams(element: global.System.Text.Json.JsonElement) =
 
     /// Arguments that the command should be invoked with.
     member _.Arguments =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("arguments") with
         | false, _ -> ValueNone
@@ -6620,7 +6620,7 @@ type ExecuteCommandRegistrationOptions(element: global.System.Text.Json.JsonElem
 
     /// The commands to be executed on the server
     member _.Commands =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("commands")
         prop
@@ -6711,7 +6711,7 @@ type WorkDoneProgressBegin(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -6761,7 +6761,7 @@ type WorkDoneProgressReport(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -6804,7 +6804,7 @@ type WorkDoneProgressEnd(element: global.System.Text.Json.JsonElement) =
     member _.AsElement = element
 
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -6870,7 +6870,7 @@ type CancelParams(element: global.System.Text.Json.JsonElement) =
 
     /// The request id to cancel.
     member _.Id =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("id")
         prop
@@ -7139,14 +7139,14 @@ type WorkspaceFoldersChangeEvent(element: global.System.Text.Json.JsonElement) =
 
     /// The array of added workspace folders
     member _.Added =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("added")
         prop
 
     /// The array of the removed workspace folders
     member _.Removed =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("removed")
         prop
@@ -7426,7 +7426,7 @@ type SemanticTokensOptions(element: global.System.Text.Json.JsonElement) =
     /// Server supports providing semantic tokens for a specific range
     /// of a document.
     member _.Range =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("range") with
         | false, _ -> ValueNone
@@ -7434,7 +7434,7 @@ type SemanticTokensOptions(element: global.System.Text.Json.JsonElement) =
 
     /// Server supports providing semantic tokens for a full document.
     member _.Full =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("full") with
         | false, _ -> ValueNone
@@ -7465,7 +7465,7 @@ type SemanticTokensEdit(element: global.System.Text.Json.JsonElement) =
 
     /// The elements to insert.
     member _.Data =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("data") with
         | false, _ -> ValueNone
@@ -7533,7 +7533,7 @@ type TextDocumentEdit(element: global.System.Text.Json.JsonElement) =
     /// @since 3.16.0 - support for AnnotatedTextEdit. This is guarded using a
     /// client capability.
     member _.Edits =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("edits")
         prop
@@ -7548,7 +7548,7 @@ type CreateFile(element: global.System.Text.Json.JsonElement) =
 
     /// A create
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -7582,7 +7582,7 @@ type RenameFile(element: global.System.Text.Json.JsonElement) =
 
     /// A rename
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -7621,7 +7621,7 @@ type DeleteFile(element: global.System.Text.Json.JsonElement) =
 
     /// A delete
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -7999,7 +7999,7 @@ type InlayHintLabelPart(element: global.System.Text.Json.JsonElement) =
     /// the client capability `inlayHint.resolveSupport` clients might resolve
     /// this property late using the resolve request.
     member _.Tooltip =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("tooltip") with
         | false, _ -> ValueNone
@@ -8131,7 +8131,7 @@ type RelatedFullDocumentDiagnosticReport(element: global.System.Text.Json.JsonEl
     /// 
     /// @since 3.17.0
     member _.RelatedDocuments =
-        // Requires specialization: "map"
+        // Complex type kind: map.
 
         match element.TryGetProperty("relatedDocuments") with
         | false, _ -> ValueNone
@@ -8139,7 +8139,7 @@ type RelatedFullDocumentDiagnosticReport(element: global.System.Text.Json.JsonEl
 
     /// A full document diagnostic report.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -8154,7 +8154,7 @@ type RelatedFullDocumentDiagnosticReport(element: global.System.Text.Json.JsonEl
 
     /// The actual items.
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -8177,7 +8177,7 @@ type RelatedUnchangedDocumentDiagnosticReport(element: global.System.Text.Json.J
     /// 
     /// @since 3.17.0
     member _.RelatedDocuments =
-        // Requires specialization: "map"
+        // Complex type kind: map.
 
         match element.TryGetProperty("relatedDocuments") with
         | false, _ -> ValueNone
@@ -8188,7 +8188,7 @@ type RelatedUnchangedDocumentDiagnosticReport(element: global.System.Text.Json.J
     /// only return `unchanged` if result ids are
     /// provided.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -8211,7 +8211,7 @@ type FullDocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) 
 
     /// A full document diagnostic report.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -8226,7 +8226,7 @@ type FullDocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) 
 
     /// The actual items.
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -8247,7 +8247,7 @@ type UnchangedDocumentDiagnosticReport(element: global.System.Text.Json.JsonElem
     /// only return `unchanged` if result ids are
     /// provided.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -8381,7 +8381,7 @@ type NotebookDocument(element: global.System.Text.Json.JsonElement) =
 
     /// The cells of a notebook.
     member _.Cells =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("cells")
         prop
@@ -8486,7 +8486,7 @@ type NotebookDocumentChangeEvent(element: global.System.Text.Json.JsonElement) =
 
     /// Changes to cells
     member _.Cells =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("cells") with
         | false, _ -> ValueNone
@@ -8566,7 +8566,7 @@ type StringValue(element: global.System.Text.Json.JsonElement) =
 
     /// The kind of string value.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -8683,7 +8683,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// Is `null` if the process has not been started by another process.
     /// If the parent process is not alive then the server should exit.
     member _.ProcessId =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("processId")
         prop
@@ -8692,7 +8692,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.ClientInfo =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("clientInfo") with
         | false, _ -> ValueNone
@@ -8716,7 +8716,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @deprecated in favour of rootUri.
     member _.RootPath =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("rootPath") with
         | false, _ -> ValueNone
@@ -8728,7 +8728,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @deprecated in favour of workspaceFolders.
     member _.RootUri =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("rootUri")
         prop
@@ -8771,7 +8771,7 @@ type WorkspaceFoldersInitializeParams(element: global.System.Text.Json.JsonEleme
     /// 
     /// @since 3.6.0
     member _.WorkspaceFolders =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("workspaceFolders") with
         | false, _ -> ValueNone
@@ -8804,7 +8804,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// defining each notification or for backwards compatibility the
     /// TextDocumentSyncKind number.
     member _.TextDocumentSync =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("textDocumentSync") with
         | false, _ -> ValueNone
@@ -8814,7 +8814,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.NotebookDocumentSync =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("notebookDocumentSync") with
         | false, _ -> ValueNone
@@ -8828,7 +8828,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides hover support.
     member _.HoverProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("hoverProvider") with
         | false, _ -> ValueNone
@@ -8842,7 +8842,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides Goto Declaration support.
     member _.DeclarationProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("declarationProvider") with
         | false, _ -> ValueNone
@@ -8850,7 +8850,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides goto definition support.
     member _.DefinitionProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("definitionProvider") with
         | false, _ -> ValueNone
@@ -8858,7 +8858,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides Goto Type Definition support.
     member _.TypeDefinitionProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("typeDefinitionProvider") with
         | false, _ -> ValueNone
@@ -8866,7 +8866,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides Goto Implementation support.
     member _.ImplementationProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("implementationProvider") with
         | false, _ -> ValueNone
@@ -8874,7 +8874,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides find references support.
     member _.ReferencesProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("referencesProvider") with
         | false, _ -> ValueNone
@@ -8882,7 +8882,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides document highlight support.
     member _.DocumentHighlightProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentHighlightProvider") with
         | false, _ -> ValueNone
@@ -8890,7 +8890,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides document symbol support.
     member _.DocumentSymbolProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentSymbolProvider") with
         | false, _ -> ValueNone
@@ -8900,7 +8900,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// specified if the client states that it supports
     /// `codeActionLiteralSupport` in its initial `initialize` request.
     member _.CodeActionProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("codeActionProvider") with
         | false, _ -> ValueNone
@@ -8920,7 +8920,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides color provider support.
     member _.ColorProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("colorProvider") with
         | false, _ -> ValueNone
@@ -8928,7 +8928,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides workspace symbol support.
     member _.WorkspaceSymbolProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("workspaceSymbolProvider") with
         | false, _ -> ValueNone
@@ -8936,7 +8936,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides document formatting.
     member _.DocumentFormattingProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentFormattingProvider") with
         | false, _ -> ValueNone
@@ -8944,7 +8944,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides document range formatting.
     member _.DocumentRangeFormattingProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentRangeFormattingProvider") with
         | false, _ -> ValueNone
@@ -8960,7 +8960,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// specified if the client states that it supports
     /// `prepareSupport` in its initial `initialize` request.
     member _.RenameProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("renameProvider") with
         | false, _ -> ValueNone
@@ -8968,7 +8968,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides folding provider support.
     member _.FoldingRangeProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("foldingRangeProvider") with
         | false, _ -> ValueNone
@@ -8976,7 +8976,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// The server provides selection range support.
     member _.SelectionRangeProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("selectionRangeProvider") with
         | false, _ -> ValueNone
@@ -8992,7 +8992,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.CallHierarchyProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("callHierarchyProvider") with
         | false, _ -> ValueNone
@@ -9002,7 +9002,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.LinkedEditingRangeProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("linkedEditingRangeProvider") with
         | false, _ -> ValueNone
@@ -9012,7 +9012,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.SemanticTokensProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("semanticTokensProvider") with
         | false, _ -> ValueNone
@@ -9022,7 +9022,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.MonikerProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("monikerProvider") with
         | false, _ -> ValueNone
@@ -9032,7 +9032,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.TypeHierarchyProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("typeHierarchyProvider") with
         | false, _ -> ValueNone
@@ -9042,7 +9042,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.InlineValueProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("inlineValueProvider") with
         | false, _ -> ValueNone
@@ -9052,7 +9052,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.InlayHintProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("inlayHintProvider") with
         | false, _ -> ValueNone
@@ -9062,7 +9062,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.DiagnosticProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("diagnosticProvider") with
         | false, _ -> ValueNone
@@ -9073,7 +9073,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
     /// @since 3.18.0
     /// @proposed
     member _.InlineCompletionProvider =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("inlineCompletionProvider") with
         | false, _ -> ValueNone
@@ -9081,7 +9081,7 @@ type ServerCapabilities(element: global.System.Text.Json.JsonElement) =
 
     /// Workspace specific server capabilities.
     member _.Workspace =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("workspace") with
         | false, _ -> ValueNone
@@ -9228,7 +9228,7 @@ type Diagnostic(element: global.System.Text.Json.JsonElement) =
 
     /// The diagnostic&apos;s code, which usually appear in the user interface.
     member _.Code =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("code") with
         | false, _ -> ValueNone
@@ -9260,7 +9260,7 @@ type Diagnostic(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -9269,7 +9269,7 @@ type Diagnostic(element: global.System.Text.Json.JsonElement) =
     /// An array of related diagnostic information, e.g. when symbol-names within
     /// a scope collide all definitions can be marked via this property.
     member _.RelatedInformation =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("relatedInformation") with
         | false, _ -> ValueNone
@@ -9407,7 +9407,7 @@ type CompletionOptions(element: global.System.Text.Json.JsonElement) =
     /// If code complete should automatically be trigger on characters not being valid inside
     /// an identifier (for example `.` in JavaScript) list them in `triggerCharacters`.
     member _.TriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("triggerCharacters") with
         | false, _ -> ValueNone
@@ -9422,7 +9422,7 @@ type CompletionOptions(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.2.0
     member _.AllCommitCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("allCommitCharacters") with
         | false, _ -> ValueNone
@@ -9440,7 +9440,7 @@ type CompletionOptions(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.CompletionItem =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("completionItem") with
         | false, _ -> ValueNone
@@ -9549,7 +9549,7 @@ type SignatureInformation(element: global.System.Text.Json.JsonElement) =
     /// The human-readable doc-comment of this signature. Will be shown
     /// in the UI but can be omitted.
     member _.Documentation =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentation") with
         | false, _ -> ValueNone
@@ -9557,7 +9557,7 @@ type SignatureInformation(element: global.System.Text.Json.JsonElement) =
 
     /// The parameters of this signature.
     member _.Parameters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("parameters") with
         | false, _ -> ValueNone
@@ -9583,7 +9583,7 @@ type SignatureHelpOptions(element: global.System.Text.Json.JsonElement) =
 
     /// List of characters that trigger signature help automatically.
     member _.TriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("triggerCharacters") with
         | false, _ -> ValueNone
@@ -9596,7 +9596,7 @@ type SignatureHelpOptions(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.15.0
     member _.RetriggerCharacters =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("retriggerCharacters") with
         | false, _ -> ValueNone
@@ -9710,7 +9710,7 @@ type BaseSymbolInformation(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.16.0
     member _.Tags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("tags") with
         | false, _ -> ValueNone
@@ -9773,7 +9773,7 @@ type CodeActionContext(element: global.System.Text.Json.JsonElement) =
     /// that these accurately reflect the error state of the resource. The primary parameter
     /// to compute code actions is the provided range.
     member _.Diagnostics =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("diagnostics")
         prop
@@ -9783,7 +9783,7 @@ type CodeActionContext(element: global.System.Text.Json.JsonElement) =
     /// Actions not of this kind are filtered out by the client before being shown. So servers
     /// can omit computing them.
     member _.Only =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("only") with
         | false, _ -> ValueNone
@@ -9810,7 +9810,7 @@ type CodeActionOptions(element: global.System.Text.Json.JsonElement) =
     /// The list of kinds may be generic, such as `CodeActionKind.Refactor`, or the server
     /// may list out every specific kind they provide.
     member _.CodeActionKinds =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("codeActionKinds") with
         | false, _ -> ValueNone
@@ -10056,7 +10056,7 @@ type DocumentOnTypeFormattingOptions(element: global.System.Text.Json.JsonElemen
 
     /// More trigger characters.
     member _.MoreTriggerCharacter =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("moreTriggerCharacter") with
         | false, _ -> ValueNone
@@ -10104,7 +10104,7 @@ type ExecuteCommandOptions(element: global.System.Text.Json.JsonElement) =
 
     /// The commands to be executed on the server
     member _.Commands =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("commands")
         prop
@@ -10124,14 +10124,14 @@ type SemanticTokensLegend(element: global.System.Text.Json.JsonElement) =
 
     /// The token types a server uses.
     member _.TokenTypes =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("tokenTypes")
         prop
 
     /// The token modifiers a server uses.
     member _.TokenModifiers =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("tokenModifiers")
         prop
@@ -10150,7 +10150,7 @@ type OptionalVersionedTextDocumentIdentifier(element: global.System.Text.Json.Js
     /// `null` to indicate that the version is unknown and the content on disk is the
     /// truth (as specified with document content ownership).
     member _.Version =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("version")
         prop
@@ -10396,14 +10396,14 @@ type WorkspaceFullDocumentDiagnosticReport(element: global.System.Text.Json.Json
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
     member _.Version =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("version")
         prop
 
     /// A full document diagnostic report.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -10418,7 +10418,7 @@ type WorkspaceFullDocumentDiagnosticReport(element: global.System.Text.Json.Json
 
     /// The actual items.
     member _.Items =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("items")
         prop
@@ -10441,7 +10441,7 @@ type WorkspaceUnchangedDocumentDiagnosticReport(element: global.System.Text.Json
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
     member _.Version =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("version")
         prop
@@ -10451,7 +10451,7 @@ type WorkspaceUnchangedDocumentDiagnosticReport(element: global.System.Text.Json
     /// only return `unchanged` if result ids are
     /// provided.
     member _.Kind =
-        // Requires specialization: "stringLiteral"
+        // Complex type kind: stringLiteral.
 
         let prop = element.GetProperty("kind")
         prop
@@ -10544,7 +10544,7 @@ type NotebookCellArrayChange(element: global.System.Text.Json.JsonElement) =
 
     /// The new cells, if any
     member _.Cells =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("cells") with
         | false, _ -> ValueNone
@@ -10695,7 +10695,7 @@ type TextDocumentSyncOptions(element: global.System.Text.Json.JsonElement) =
     /// If present save notifications are sent to the server. If omitted the notification should not be
     /// sent.
     member _.Save =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("save") with
         | false, _ -> ValueNone
@@ -10723,7 +10723,7 @@ type NotebookDocumentSyncOptions(element: global.System.Text.Json.JsonElement) =
 
     /// The notebooks to be synced
     member _.NotebookSelector =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("notebookSelector")
         prop
@@ -10747,7 +10747,7 @@ type NotebookDocumentSyncRegistrationOptions(element: global.System.Text.Json.Js
 
     /// The notebooks to be synced
     member _.NotebookSelector =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("notebookSelector")
         prop
@@ -10787,7 +10787,7 @@ type WorkspaceFoldersServerCapabilities(element: global.System.Text.Json.JsonEle
     /// side. The ID can be used to unregister for these events
     /// using the `client/unregisterCapability` request.
     member _.ChangeNotifications =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("changeNotifications") with
         | false, _ -> ValueNone
@@ -10937,7 +10937,7 @@ type ParameterInformation(element: global.System.Text.Json.JsonElement) =
     /// *Note*: a label of type string should be a substring of its containing signature label.
     /// Its intended use case is to highlight the parameter label part in the `SignatureInformation.label`.
     member _.Label =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("label")
         prop
@@ -10945,7 +10945,7 @@ type ParameterInformation(element: global.System.Text.Json.JsonElement) =
     /// The human-readable doc-comment of this parameter. Will be shown
     /// in the UI but can be omitted.
     member _.Documentation =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         match element.TryGetProperty("documentation") with
         | false, _ -> ValueNone
@@ -10967,7 +10967,7 @@ type NotebookCellTextDocumentFilter(element: global.System.Text.Json.JsonElement
     /// value is provided it matches against the
     /// notebook type. &apos;*&apos; matches every notebook.
     member _.Notebook =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("notebook")
         prop
@@ -11669,7 +11669,7 @@ type GeneralClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.StaleRequestSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("staleRequestSupport") with
         | false, _ -> ValueNone
@@ -11710,7 +11710,7 @@ type GeneralClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.PositionEncodings =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("positionEncodings") with
         | false, _ -> ValueNone
@@ -11731,7 +11731,7 @@ type RelativePattern(element: global.System.Text.Json.JsonElement) =
     /// A workspace folder or a base URI to which this pattern will be matched
     /// against relatively.
     member _.BaseUri =
-        // Requires specialization: "or"
+        // Complex type kind: or.
 
         let prop = element.GetProperty("baseUri")
         prop
@@ -11759,7 +11759,7 @@ type WorkspaceEditClientCapabilities(element: global.System.Text.Json.JsonElemen
     /// 
     /// @since 3.13.0
     member _.ResourceOperations =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("resourceOperations") with
         | false, _ -> ValueNone
@@ -11791,7 +11791,7 @@ type WorkspaceEditClientCapabilities(element: global.System.Text.Json.JsonElemen
     /// 
     /// @since 3.16.0
     member _.ChangeAnnotationSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("changeAnnotationSupport") with
         | false, _ -> ValueNone
@@ -11868,7 +11868,7 @@ type WorkspaceSymbolClientCapabilities(element: global.System.Text.Json.JsonElem
 
     /// Specific capabilities for the `SymbolKind` in the `workspace/symbol` request.
     member _.SymbolKind =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("symbolKind") with
         | false, _ -> ValueNone
@@ -11879,7 +11879,7 @@ type WorkspaceSymbolClientCapabilities(element: global.System.Text.Json.JsonElem
     /// 
     /// @since 3.16.0
     member _.TagSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("tagSupport") with
         | false, _ -> ValueNone
@@ -11891,7 +11891,7 @@ type WorkspaceSymbolClientCapabilities(element: global.System.Text.Json.JsonElem
     /// 
     /// @since 3.17.0
     member _.ResolveSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("resolveSupport") with
         | false, _ -> ValueNone
@@ -12247,14 +12247,14 @@ type CompletionClientCapabilities(element: global.System.Text.Json.JsonElement) 
     /// The client supports the following `CompletionItem` specific
     /// capabilities.
     member _.CompletionItem =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("completionItem") with
         | false, _ -> ValueNone
         | true, prop -> ValueSome(prop)
 
     member _.CompletionItemKind =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("completionItemKind") with
         | false, _ -> ValueNone
@@ -12282,7 +12282,7 @@ type CompletionClientCapabilities(element: global.System.Text.Json.JsonElement) 
     /// 
     /// @since 3.17.0
     member _.CompletionList =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("completionList") with
         | false, _ -> ValueNone
@@ -12304,7 +12304,7 @@ type HoverClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// Client supports the following content formats for the content
     /// property. The order describes the preferred format of the client.
     member _.ContentFormat =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("contentFormat") with
         | false, _ -> ValueNone
@@ -12327,7 +12327,7 @@ type SignatureHelpClientCapabilities(element: global.System.Text.Json.JsonElemen
     /// The client supports the following `SignatureInformation`
     /// specific properties.
     member _.SignatureInformation =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("signatureInformation") with
         | false, _ -> ValueNone
@@ -12539,7 +12539,7 @@ type DocumentSymbolClientCapabilities(element: global.System.Text.Json.JsonEleme
     /// Specific capabilities for the `SymbolKind` in the
     /// `textDocument/documentSymbol` request.
     member _.SymbolKind =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("symbolKind") with
         | false, _ -> ValueNone
@@ -12557,7 +12557,7 @@ type DocumentSymbolClientCapabilities(element: global.System.Text.Json.JsonEleme
     /// 
     /// @since 3.16.0
     member _.TagSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("tagSupport") with
         | false, _ -> ValueNone
@@ -12592,7 +12592,7 @@ type CodeActionClientCapabilities(element: global.System.Text.Json.JsonElement) 
     /// 
     /// @since 3.8.0
     member _.CodeActionLiteralSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("codeActionLiteralSupport") with
         | false, _ -> ValueNone
@@ -12629,7 +12629,7 @@ type CodeActionClientCapabilities(element: global.System.Text.Json.JsonElement) 
     /// 
     /// @since 3.16.0
     member _.ResolveSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("resolveSupport") with
         | false, _ -> ValueNone
@@ -12899,7 +12899,7 @@ type FoldingRangeClientCapabilities(element: global.System.Text.Json.JsonElement
     /// 
     /// @since 3.17.0
     member _.FoldingRangeKind =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("foldingRangeKind") with
         | false, _ -> ValueNone
@@ -12909,7 +12909,7 @@ type FoldingRangeClientCapabilities(element: global.System.Text.Json.JsonElement
     /// 
     /// @since 3.17.0
     member _.FoldingRange =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("foldingRange") with
         | false, _ -> ValueNone
@@ -12956,7 +12956,7 @@ type PublishDiagnosticsClientCapabilities(element: global.System.Text.Json.JsonE
     /// 
     /// @since 3.15.0
     member _.TagSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("tagSupport") with
         | false, _ -> ValueNone
@@ -13037,28 +13037,28 @@ type SemanticTokensClientCapabilities(element: global.System.Text.Json.JsonEleme
     /// range provider the client might not render a minimap correctly or might
     /// even decide to not show any semantic tokens at all.
     member _.Requests =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         let prop = element.GetProperty("requests")
         prop
 
     /// The token types that the client supports.
     member _.TokenTypes =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("tokenTypes")
         prop
 
     /// The token modifiers that the client supports.
     member _.TokenModifiers =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("tokenModifiers")
         prop
 
     /// The token formats the clients supports.
     member _.Formats =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         let prop = element.GetProperty("formats")
         prop
@@ -13216,7 +13216,7 @@ type InlayHintClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// Indicates which properties a client can resolve lazily on an inlay
     /// hint.
     member _.ResolveSupport =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("resolveSupport") with
         | false, _ -> ValueNone
@@ -13327,7 +13327,7 @@ type ShowMessageRequestClientCapabilities(element: global.System.Text.Json.JsonE
 
     /// Capabilities specific to the `MessageActionItem` type.
     member _.MessageActionItem =
-        // Requires specialization: "literal"
+        // Complex type kind: literal.
 
         match element.TryGetProperty("messageActionItem") with
         | false, _ -> ValueNone
@@ -13414,7 +13414,7 @@ type MarkdownClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// 
     /// @since 3.17.0
     member _.AllowedTags =
-        // Requires specialization: "array"
+        // Complex type kind: array.
 
         match element.TryGetProperty("allowedTags") with
         | false, _ -> ValueNone
@@ -13431,7 +13431,7 @@ type MarkdownClientCapabilities(element: global.System.Text.Json.JsonElement) =
 /// by the client.
 [<global.FSharp.Core.Struct>]
 type Definition(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13447,7 +13447,7 @@ type DefinitionLink = LocationLink
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type LSPArray(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "array".
+    // Complex type kind: array.
 
     member _.AsElement = element
 
@@ -13461,7 +13461,7 @@ type LSPArray(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type LSPAny(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13470,7 +13470,7 @@ type LSPAny(element: global.System.Text.Json.JsonElement) =
 /// The declaration of a symbol representation as one or many {@link Location locations}.
 [<global.FSharp.Core.Struct>]
 type Declaration(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13494,7 +13494,7 @@ type DeclarationLink = LocationLink
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type InlineValue(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13509,7 +13509,7 @@ type InlineValue(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type DocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13517,7 +13517,7 @@ type DocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) =
 
 [<global.FSharp.Core.Struct>]
 type PrepareRenameResult(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13530,7 +13530,7 @@ type PrepareRenameResult(element: global.System.Text.Json.JsonElement) =
 /// The use of a string as a document filter is deprecated @since 3.16.0.
 [<global.FSharp.Core.Struct>]
 type DocumentSelector(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "array".
+    // Complex type kind: array.
 
     member _.AsElement = element
 
@@ -13538,7 +13538,7 @@ type DocumentSelector(element: global.System.Text.Json.JsonElement) =
 
 [<global.FSharp.Core.Struct>]
 type ProgressToken(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13552,7 +13552,7 @@ type ChangeAnnotationIdentifier = global.Amongonz.LspTypes.LspString
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type WorkspaceDocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13562,7 +13562,7 @@ type WorkspaceDocumentDiagnosticReport(element: global.System.Text.Json.JsonElem
 /// it is considered to be the full content of the document.
 [<global.FSharp.Core.Struct>]
 type TextDocumentContentChangeEvent(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13582,7 +13582,7 @@ type TextDocumentContentChangeEvent(element: global.System.Text.Json.JsonElement
 /// @deprecated use MarkupContent instead.
 [<global.FSharp.Core.Struct>]
 type MarkedString(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13594,7 +13594,7 @@ type MarkedString(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0 - proposed support for NotebookCellTextDocumentFilter.
 [<global.FSharp.Core.Struct>]
 type DocumentFilter(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13604,7 +13604,7 @@ type DocumentFilter(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type LSPObject(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "map".
+    // Complex type kind: map.
 
     member _.AsElement = element
 
@@ -13615,7 +13615,7 @@ type LSPObject(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type GlobPattern(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13639,7 +13639,7 @@ type GlobPattern(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type TextDocumentFilter(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 
@@ -13652,7 +13652,7 @@ type TextDocumentFilter(element: global.System.Text.Json.JsonElement) =
 /// @since 3.17.0
 [<global.FSharp.Core.Struct>]
 type NotebookDocumentFilter(element: global.System.Text.Json.JsonElement) =
-    // Requires specialization: "or".
+    // Complex type kind: or.
 
     member _.AsElement = element
 

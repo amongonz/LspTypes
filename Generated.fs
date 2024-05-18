@@ -1,5 +1,5 @@
 // This file was auto-generated.
-namespace rec SteelScript.LspTypes
+namespace rec Amongonz.LspTypes
 
 /// A set of predefined token types. This set is not fixed
 /// an clients can specify additional token types via the
@@ -1485,19 +1485,19 @@ type ImplementationParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(ImplementationParams(element))
@@ -1511,7 +1511,7 @@ type Location(element: global.System.Text.Json.JsonElement) =
 
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     member _.Range =
         let prop = element.GetProperty("range")
@@ -1521,11 +1521,11 @@ type Location(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
         then Ok(Location(element))
@@ -1548,7 +1548,7 @@ type ImplementationRegistrationOptions(element: global.System.Text.Json.JsonElem
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(ImplementationRegistrationOptions(element))
@@ -1584,19 +1584,19 @@ type TypeDefinitionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(TypeDefinitionParams(element))
@@ -1619,7 +1619,7 @@ type TypeDefinitionRegistrationOptions(element: global.System.Text.Json.JsonElem
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(TypeDefinitionRegistrationOptions(element))
@@ -1632,24 +1632,24 @@ type WorkspaceFolder(element: global.System.Text.Json.JsonElement) =
     /// The associated URI for this workspace folder.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     /// The name of the workspace folder. Used to refer to this
     /// workspace folder in the user interface.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "name" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "name" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(WorkspaceFolder(element))
         else Error()
@@ -1668,7 +1668,7 @@ type DidChangeWorkspaceFoldersParams(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "event" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "event" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (WorkspaceFoldersChangeEvent.Parse(prop)))
             end
         then Ok(DidChangeWorkspaceFoldersParams(element))
@@ -1715,15 +1715,15 @@ type DocumentColorParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentColorParams(element))
@@ -1748,11 +1748,11 @@ type ColorInformation(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "color" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "color" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Color.Parse(prop)))
             end
         then Ok(ColorInformation(element))
@@ -1775,7 +1775,7 @@ type DocumentColorRegistrationOptions(element: global.System.Text.Json.JsonEleme
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(DocumentColorRegistrationOptions(element))
@@ -1817,23 +1817,23 @@ type ColorPresentationParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "color" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "color" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Color.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(ColorPresentationParams(element))
@@ -1848,7 +1848,7 @@ type ColorPresentation(element: global.System.Text.Json.JsonElement) =
     /// this color presentation.
     member _.Label =
         let prop = element.GetProperty("label")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// An {@link TextEdit edit} which is applied to a document when selecting
     /// this presentation for the color.  When `falsy` the {@link ColorPresentation.label label}
@@ -1883,8 +1883,8 @@ type WorkDoneProgressOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(WorkDoneProgressOptions(element))
         else Error()
@@ -1932,15 +1932,15 @@ type FoldingRangeParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(FoldingRangeParams(element))
@@ -1992,34 +1992,34 @@ type FoldingRange(element: global.System.Text.Json.JsonElement) =
     member _.CollapsedText =
         match element.TryGetProperty("collapsedText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "startLine" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "startLine" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "startCharacter" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "startCharacter" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "endLine" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "endLine" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "endCharacter" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "endCharacter" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FoldingRangeKind.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "collapsedText" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "collapsedText" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(FoldingRange(element))
         else Error()
@@ -2041,7 +2041,7 @@ type FoldingRangeRegistrationOptions(element: global.System.Text.Json.JsonElemen
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(FoldingRangeRegistrationOptions(element))
@@ -2077,19 +2077,19 @@ type DeclarationParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DeclarationParams(element))
@@ -2112,7 +2112,7 @@ type DeclarationRegistrationOptions(element: global.System.Text.Json.JsonElement
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(DeclarationRegistrationOptions(element))
@@ -2171,11 +2171,11 @@ type SelectionRange(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "parent" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "parent" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SelectionRange.Parse(prop)))
             end
         then Ok(SelectionRange(element))
@@ -2198,7 +2198,7 @@ type SelectionRangeRegistrationOptions(element: global.System.Text.Json.JsonElem
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(SelectionRangeRegistrationOptions(element))
@@ -2216,7 +2216,7 @@ type WorkDoneProgressCreateParams(element: global.System.Text.Json.JsonElement) 
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "token" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "token" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(WorkDoneProgressCreateParams(element))
@@ -2235,7 +2235,7 @@ type WorkDoneProgressCancelParams(element: global.System.Text.Json.JsonElement) 
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "token" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "token" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(WorkDoneProgressCancelParams(element))
@@ -2268,15 +2268,15 @@ type CallHierarchyPrepareParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CallHierarchyPrepareParams(element))
@@ -2293,7 +2293,7 @@ type CallHierarchyItem(element: global.System.Text.Json.JsonElement) =
     /// The name of this item.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of this item.
     member _.Kind =
@@ -2312,12 +2312,12 @@ type CallHierarchyItem(element: global.System.Text.Json.JsonElement) =
     member _.Detail =
         match element.TryGetProperty("detail") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The resource identifier of this item.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The range enclosing this symbol not including leading/trailing whitespace but everything else, e.g. comments and code.
     member _.Range =
@@ -2360,7 +2360,7 @@ type CallHierarchyRegistrationOptions(element: global.System.Text.Json.JsonEleme
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(CallHierarchyRegistrationOptions(element))
@@ -2393,15 +2393,15 @@ type CallHierarchyIncomingCallsParams(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "item" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "item" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (CallHierarchyItem.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CallHierarchyIncomingCallsParams(element))
@@ -2458,15 +2458,15 @@ type CallHierarchyOutgoingCallsParams(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "item" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "item" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (CallHierarchyItem.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CallHierarchyOutgoingCallsParams(element))
@@ -2523,15 +2523,15 @@ type SemanticTokensParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(SemanticTokensParams(element))
@@ -2549,7 +2549,7 @@ type SemanticTokens(element: global.System.Text.Json.JsonElement) =
     member _.ResultId =
         match element.TryGetProperty("resultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The actual tokens.
     member _.Data =
@@ -2615,7 +2615,7 @@ type SemanticTokensRegistrationOptions(element: global.System.Text.Json.JsonElem
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(SemanticTokensRegistrationOptions(element))
@@ -2634,7 +2634,7 @@ type SemanticTokensDeltaParams(element: global.System.Text.Json.JsonElement) =
     /// or a delta response depending on what was received last.
     member _.PreviousResultId =
         let prop = element.GetProperty("previousResultId")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// An optional token that a server can use to report work done progress.
     member _.WorkDoneToken =
@@ -2653,19 +2653,19 @@ type SemanticTokensDeltaParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "previousResultId" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "previousResultId" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(SemanticTokensDeltaParams(element))
@@ -2679,7 +2679,7 @@ type SemanticTokensDelta(element: global.System.Text.Json.JsonElement) =
     member _.ResultId =
         match element.TryGetProperty("resultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The semantic token edits to transform a previous result into a new result.
     member _.Edits =
@@ -2737,19 +2737,19 @@ type SemanticTokensRangeParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(SemanticTokensRangeParams(element))
@@ -2765,7 +2765,7 @@ type ShowDocumentParams(element: global.System.Text.Json.JsonElement) =
     /// The uri to show.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     /// Indicates to show the resource in an external program.
     /// To show, for example, `https://code.visualstudio.com/`
@@ -2797,19 +2797,19 @@ type ShowDocumentParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "external" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "external" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "takeFocus" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "takeFocus" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "selection" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "selection" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
         then Ok(ShowDocumentParams(element))
@@ -2831,8 +2831,8 @@ type ShowDocumentResult(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "success" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "success" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ShowDocumentResult(element))
         else Error()
@@ -2861,15 +2861,15 @@ type LinkedEditingRangeParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(LinkedEditingRangeParams(element))
@@ -2896,7 +2896,7 @@ type LinkedEditingRanges(element: global.System.Text.Json.JsonElement) =
     member _.WordPattern =
         match element.TryGetProperty("wordPattern") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(LinkedEditingRanges(element))
@@ -2918,7 +2918,7 @@ type LinkedEditingRangeRegistrationOptions(element: global.System.Text.Json.Json
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(LinkedEditingRangeRegistrationOptions(element))
@@ -3083,19 +3083,19 @@ type MonikerParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(MonikerParams(element))
@@ -3111,13 +3111,13 @@ type Moniker(element: global.System.Text.Json.JsonElement) =
     /// The scheme of the moniker. For example tsc or .Net
     member _.Scheme =
         let prop = element.GetProperty("scheme")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The identifier of the moniker. The value is opaque in LSIF however
     /// schema owners are allowed to define the structure if they want.
     member _.Identifier =
         let prop = element.GetProperty("identifier")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The scope in which the moniker is unique
     member _.Unique =
@@ -3134,19 +3134,19 @@ type Moniker(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "scheme" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "scheme" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "identifier" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "identifier" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "unique" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "unique" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (UniquenessLevel.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (MonikerKind.Parse(prop)))
             end
         then Ok(Moniker(element))
@@ -3194,15 +3194,15 @@ type TypeHierarchyPrepareParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(TypeHierarchyPrepareParams(element))
@@ -3216,7 +3216,7 @@ type TypeHierarchyItem(element: global.System.Text.Json.JsonElement) =
     /// The name of this item.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of this item.
     member _.Kind =
@@ -3235,12 +3235,12 @@ type TypeHierarchyItem(element: global.System.Text.Json.JsonElement) =
     member _.Detail =
         match element.TryGetProperty("detail") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The resource identifier of this item.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The range enclosing this symbol not including leading/trailing whitespace
     /// but everything else, e.g. comments and code.
@@ -3287,7 +3287,7 @@ type TypeHierarchyRegistrationOptions(element: global.System.Text.Json.JsonEleme
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(TypeHierarchyRegistrationOptions(element))
@@ -3320,15 +3320,15 @@ type TypeHierarchySupertypesParams(element: global.System.Text.Json.JsonElement)
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "item" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "item" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TypeHierarchyItem.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(TypeHierarchySupertypesParams(element))
@@ -3362,15 +3362,15 @@ type TypeHierarchySubtypesParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "item" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "item" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TypeHierarchyItem.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(TypeHierarchySubtypesParams(element))
@@ -3409,19 +3409,19 @@ type InlineValueParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (InlineValueContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(InlineValueParams(element))
@@ -3447,7 +3447,7 @@ type InlineValueRegistrationOptions(element: global.System.Text.Json.JsonElement
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(InlineValueRegistrationOptions(element))
@@ -3479,15 +3479,15 @@ type InlayHintParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(InlayHintParams(element))
@@ -3602,7 +3602,7 @@ type InlayHintRegistrationOptions(element: global.System.Text.Json.JsonElement) 
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(InlayHintRegistrationOptions(element))
@@ -3623,13 +3623,13 @@ type DocumentDiagnosticParams(element: global.System.Text.Json.JsonElement) =
     member _.Identifier =
         match element.TryGetProperty("identifier") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The result id of a previous response if provided.
     member _.PreviousResultId =
         match element.TryGetProperty("previousResultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// An optional token that a server can use to report work done progress.
     member _.WorkDoneToken =
@@ -3648,23 +3648,23 @@ type DocumentDiagnosticParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "identifier" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "identifier" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "previousResultId" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "previousResultId" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentDiagnosticParams(element))
@@ -3701,8 +3701,8 @@ type DiagnosticServerCancellationData(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "retriggerRequest" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "retriggerRequest" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DiagnosticServerCancellationData(element))
         else Error()
@@ -3727,7 +3727,7 @@ type DiagnosticRegistrationOptions(element: global.System.Text.Json.JsonElement)
     member _.Identifier =
         match element.TryGetProperty("identifier") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// Whether the language has inter file dependencies meaning that
     /// editing code in one file can result in a different diagnostic
@@ -3747,7 +3747,7 @@ type DiagnosticRegistrationOptions(element: global.System.Text.Json.JsonElement)
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(DiagnosticRegistrationOptions(element))
@@ -3763,7 +3763,7 @@ type WorkspaceDiagnosticParams(element: global.System.Text.Json.JsonElement) =
     member _.Identifier =
         match element.TryGetProperty("identifier") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The currently known diagnostic reports with their
     /// previous result ids.
@@ -3880,11 +3880,11 @@ type DidChangeNotebookDocumentParams(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "notebookDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "notebookDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (VersionedNotebookDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "change" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "change" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (NotebookDocumentChangeEvent.Parse(prop)))
             end
         then Ok(DidChangeNotebookDocumentParams(element))
@@ -3906,7 +3906,7 @@ type DidSaveNotebookDocumentParams(element: global.System.Text.Json.JsonElement)
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "notebookDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "notebookDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (NotebookDocumentIdentifier.Parse(prop)))
             end
         then Ok(DidSaveNotebookDocumentParams(element))
@@ -3969,19 +3969,19 @@ type InlineCompletionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (InlineCompletionContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(InlineCompletionParams(element))
@@ -4024,7 +4024,7 @@ type InlineCompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.FilterText =
         match element.TryGetProperty("filterText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The range to replace. Must begin and end on the same line.
     member _.Range =
@@ -4062,7 +4062,7 @@ type InlineCompletionRegistrationOptions(element: global.System.Text.Json.JsonEl
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(InlineCompletionRegistrationOptions(element))
@@ -4129,7 +4129,7 @@ type InitializeParams(element: global.System.Text.Json.JsonElement) =
     member _.Locale =
         match element.TryGetProperty("locale") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The rootPath of the workspace. Is null
     /// if no folder is open.
@@ -4228,8 +4228,8 @@ type InitializeError(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "retry" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "retry" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InitializeError(element))
         else Error()
@@ -4258,7 +4258,7 @@ type DidChangeConfigurationParams(element: global.System.Text.Json.JsonElement) 
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "settings" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "settings" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(DidChangeConfigurationParams(element))
@@ -4291,18 +4291,18 @@ type ShowMessageParams(element: global.System.Text.Json.JsonElement) =
     /// The actual message.
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "type" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "type" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "message" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "message" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(ShowMessageParams(element))
         else Error()
@@ -4319,7 +4319,7 @@ type ShowMessageRequestParams(element: global.System.Text.Json.JsonElement) =
     /// The actual message.
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The message action items to present.
     member _.Actions =
@@ -4339,14 +4339,14 @@ type MessageActionItem(element: global.System.Text.Json.JsonElement) =
     /// A short title like &apos;Retry&apos;, &apos;Open Log&apos; etc.
     member _.Title =
         let prop = element.GetProperty("title")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "title" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "title" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(MessageActionItem(element))
         else Error()
@@ -4364,18 +4364,18 @@ type LogMessageParams(element: global.System.Text.Json.JsonElement) =
     /// The actual message.
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "type" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "type" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "message" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "message" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(LogMessageParams(element))
         else Error()
@@ -4394,7 +4394,7 @@ type DidOpenTextDocumentParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentItem.Parse(prop)))
             end
         then Ok(DidOpenTextDocumentParams(element))
@@ -4467,7 +4467,7 @@ type DidCloseTextDocumentParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
         then Ok(DidCloseTextDocumentParams(element))
@@ -4488,18 +4488,18 @@ type DidSaveTextDocumentParams(element: global.System.Text.Json.JsonElement) =
     member _.Text =
         match element.TryGetProperty("text") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "text" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "text" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(DidSaveTextDocumentParams(element))
         else Error()
@@ -4545,11 +4545,11 @@ type WillSaveTextDocumentParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "reason" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "reason" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
         then Ok(WillSaveTextDocumentParams(element))
@@ -4570,18 +4570,18 @@ type TextEdit(element: global.System.Text.Json.JsonElement) =
     /// empty string.
     member _.NewText =
         let prop = element.GetProperty("newText")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "newText" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "newText" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(TextEdit(element))
         else Error()
@@ -4624,7 +4624,7 @@ type PublishDiagnosticsParams(element: global.System.Text.Json.JsonElement) =
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// Optional the version number of the document the diagnostics are published for.
     /// 
@@ -4683,23 +4683,23 @@ type CompletionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CompletionContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CompletionParams(element))
@@ -4720,7 +4720,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     /// be an unqualified name of the completion item.
     member _.Label =
         let prop = element.GetProperty("label")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Additional details for the label
     /// 
@@ -4752,7 +4752,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.Detail =
         match element.TryGetProperty("detail") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// A human-readable string that represents a doc-comment.
     member _.Documentation =
@@ -4785,7 +4785,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.SortText =
         match element.TryGetProperty("sortText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// A string that should be used when filtering a set of
     /// completion items. When `falsy` the {@link CompletionItem.label label}
@@ -4793,7 +4793,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.FilterText =
         match element.TryGetProperty("filterText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// A string that should be inserted into a document when selecting
     /// this completion. When `falsy` the {@link CompletionItem.label label}
@@ -4809,7 +4809,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.InsertText =
         match element.TryGetProperty("insertText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The format of the insert text. The format applies to both the
     /// `insertText` property and the `newText` property of a provided
@@ -4872,7 +4872,7 @@ type CompletionItem(element: global.System.Text.Json.JsonElement) =
     member _.TextEditText =
         match element.TryGetProperty("textEditText") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// An optional array of additional {@link TextEdit text edits} that are applied when
     /// selecting this completion. Edits must not overlap (including the same insert position)
@@ -5049,15 +5049,15 @@ type HoverParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(HoverParams(element))
@@ -5135,19 +5135,19 @@ type SignatureHelpParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SignatureHelpContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(SignatureHelpParams(element))
@@ -5265,19 +5265,19 @@ type DefinitionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DefinitionParams(element))
@@ -5335,23 +5335,23 @@ type ReferenceParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (ReferenceContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(ReferenceParams(element))
@@ -5405,19 +5405,19 @@ type DocumentHighlightParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentHighlightParams(element))
@@ -5445,11 +5445,11 @@ type DocumentHighlight(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> true)
             end
         then Ok(DocumentHighlight(element))
@@ -5498,15 +5498,15 @@ type DocumentSymbolParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentSymbolParams(element))
@@ -5542,7 +5542,7 @@ type SymbolInformation(element: global.System.Text.Json.JsonElement) =
     /// The name of this symbol.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of this symbol.
     member _.Kind =
@@ -5566,7 +5566,7 @@ type SymbolInformation(element: global.System.Text.Json.JsonElement) =
     member _.ContainerName =
         match element.TryGetProperty("containerName") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(SymbolInformation(element))
@@ -5583,13 +5583,13 @@ type DocumentSymbol(element: global.System.Text.Json.JsonElement) =
     /// an empty string or a string only consisting of white spaces.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// More detail for this symbol, e.g the signature of a function.
     member _.Detail =
         match element.TryGetProperty("detail") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The kind of this symbol.
     member _.Kind =
@@ -5658,7 +5658,7 @@ type DocumentSymbolRegistrationOptions(element: global.System.Text.Json.JsonElem
     member _.Label =
         match element.TryGetProperty("label") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(DocumentSymbolRegistrationOptions(element))
@@ -5700,23 +5700,23 @@ type CodeActionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "context" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "context" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (CodeActionContext.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CodeActionParams(element))
@@ -5733,12 +5733,12 @@ type Command(element: global.System.Text.Json.JsonElement) =
     /// Title of the command, like `save`.
     member _.Title =
         let prop = element.GetProperty("title")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The identifier of the actual command handler.
     member _.Command =
         let prop = element.GetProperty("command")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Arguments that the command handler should be
     /// invoked with.
@@ -5763,7 +5763,7 @@ type CodeAction(element: global.System.Text.Json.JsonElement) =
     /// A short, human-readable, title for this code action.
     member _.Title =
         let prop = element.GetProperty("title")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of the code action.
     /// 
@@ -5886,7 +5886,7 @@ type WorkspaceSymbolParams(element: global.System.Text.Json.JsonElement) =
     /// string here to request all symbols.
     member _.Query =
         let prop = element.GetProperty("query")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// An optional token that a server can use to report work done progress.
     member _.WorkDoneToken =
@@ -5905,15 +5905,15 @@ type WorkspaceSymbolParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "query" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "query" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(WorkspaceSymbolParams(element))
@@ -5949,7 +5949,7 @@ type WorkspaceSymbol(element: global.System.Text.Json.JsonElement) =
     /// The name of this symbol.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of this symbol.
     member _.Kind =
@@ -5973,7 +5973,7 @@ type WorkspaceSymbol(element: global.System.Text.Json.JsonElement) =
     member _.ContainerName =
         match element.TryGetProperty("containerName") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(WorkspaceSymbol(element))
@@ -5996,8 +5996,8 @@ type WorkspaceSymbolRegistrationOptions(element: global.System.Text.Json.JsonEle
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "resolveProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "resolveProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(WorkspaceSymbolRegistrationOptions(element))
         else Error()
@@ -6029,15 +6029,15 @@ type CodeLensParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(CodeLensParams(element))
@@ -6074,15 +6074,15 @@ type CodeLens(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "command" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "command" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (Command.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "data" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "data" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(CodeLens(element))
@@ -6137,15 +6137,15 @@ type DocumentLinkParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentLinkParams(element))
@@ -6166,7 +6166,7 @@ type DocumentLink(element: global.System.Text.Json.JsonElement) =
     member _.Target =
         match element.TryGetProperty("target") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspUri(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspUri(prop))
 
     /// The tooltip text when you hover over this link.
     /// 
@@ -6178,7 +6178,7 @@ type DocumentLink(element: global.System.Text.Json.JsonElement) =
     member _.Tooltip =
         match element.TryGetProperty("tooltip") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// A data entry field that is preserved on a document link between a
     /// DocumentLinkRequest and a DocumentLinkResolveRequest.
@@ -6191,19 +6191,19 @@ type DocumentLink(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "target" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "target" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "tooltip" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "tooltip" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "data" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "data" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(DocumentLink(element))
@@ -6256,15 +6256,15 @@ type DocumentFormattingParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "options" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "options" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (FormattingOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentFormattingParams(element))
@@ -6316,19 +6316,19 @@ type DocumentRangeFormattingParams(element: global.System.Text.Json.JsonElement)
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "options" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "options" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (FormattingOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(DocumentRangeFormattingParams(element))
@@ -6416,7 +6416,7 @@ type DocumentOnTypeFormattingParams(element: global.System.Text.Json.JsonElement
     /// characters as well (e.g. like automatic brace completion).
     member _.Ch =
         let prop = element.GetProperty("ch")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The formatting options.
     member _.Options =
@@ -6427,19 +6427,19 @@ type DocumentOnTypeFormattingParams(element: global.System.Text.Json.JsonElement
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "ch" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "ch" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "options" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "options" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (FormattingOptions.Parse(prop)))
             end
         then Ok(DocumentOnTypeFormattingParams(element))
@@ -6461,7 +6461,7 @@ type DocumentOnTypeFormattingRegistrationOptions(element: global.System.Text.Jso
     /// A character on which formatting should be triggered, like `{`.
     member _.FirstTriggerCharacter =
         let prop = element.GetProperty("firstTriggerCharacter")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// More trigger characters.
     member _.MoreTriggerCharacter =
@@ -6494,7 +6494,7 @@ type RenameParams(element: global.System.Text.Json.JsonElement) =
     /// appropriate message set.
     member _.NewName =
         let prop = element.GetProperty("newName")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// An optional token that a server can use to report work done progress.
     member _.WorkDoneToken =
@@ -6506,19 +6506,19 @@ type RenameParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "newName" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "newName" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(RenameParams(element))
@@ -6572,15 +6572,15 @@ type PrepareRenameParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(PrepareRenameParams(element))
@@ -6594,7 +6594,7 @@ type ExecuteCommandParams(element: global.System.Text.Json.JsonElement) =
     /// The identifier of the actual command handler.
     member _.Command =
         let prop = element.GetProperty("command")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Arguments that the command should be invoked with.
     member _.Arguments =
@@ -6639,7 +6639,7 @@ type ApplyWorkspaceEditParams(element: global.System.Text.Json.JsonElement) =
     member _.Label =
         match element.TryGetProperty("label") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The edits to apply.
     member _.Edit =
@@ -6650,11 +6650,11 @@ type ApplyWorkspaceEditParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "label" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "label" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "edit" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "edit" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (WorkspaceEdit.Parse(prop)))
             end
         then Ok(ApplyWorkspaceEditParams(element))
@@ -6678,7 +6678,7 @@ type ApplyWorkspaceEditResult(element: global.System.Text.Json.JsonElement) =
     member _.FailureReason =
         match element.TryGetProperty("failureReason") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// Depending on the client&apos;s failure handling strategy `failedChange` might
     /// contain the index of the change that failed. This property is only available
@@ -6692,16 +6692,16 @@ type ApplyWorkspaceEditResult(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "applied" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "applied" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "failureReason" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "failureReason" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "failedChange" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "failedChange" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
         then Ok(ApplyWorkspaceEditResult(element))
         else Error()
@@ -6722,7 +6722,7 @@ type WorkDoneProgressBegin(element: global.System.Text.Json.JsonElement) =
     /// Examples: &quot;Indexing&quot; or &quot;Linking dependencies&quot;.
     member _.Title =
         let prop = element.GetProperty("title")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Controls if a cancel button should show to allow the user to cancel the
     /// long running operation. Clients that don&apos;t support cancellation are allowed
@@ -6740,7 +6740,7 @@ type WorkDoneProgressBegin(element: global.System.Text.Json.JsonElement) =
     member _.Message =
         match element.TryGetProperty("message") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// Optional progress percentage to display (value 100 is considered 100%).
     /// If not provided infinite progress is assumed and clients are allowed
@@ -6783,7 +6783,7 @@ type WorkDoneProgressReport(element: global.System.Text.Json.JsonElement) =
     member _.Message =
         match element.TryGetProperty("message") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// Optional progress percentage to display (value 100 is considered 100%).
     /// If not provided infinite progress is assumed and clients are allowed
@@ -6814,7 +6814,7 @@ type WorkDoneProgressEnd(element: global.System.Text.Json.JsonElement) =
     member _.Message =
         match element.TryGetProperty("message") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(WorkDoneProgressEnd(element))
@@ -6831,7 +6831,7 @@ type SetTraceParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "value" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "value" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TraceValues.Parse(prop)))
             end
         then Ok(SetTraceParams(element))
@@ -6843,23 +6843,23 @@ type LogTraceParams(element: global.System.Text.Json.JsonElement) =
 
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     member _.Verbose =
         match element.TryGetProperty("verbose") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "message" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "message" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "verbose" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "verbose" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(LogTraceParams(element))
         else Error()
@@ -6896,11 +6896,11 @@ type ProgressParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "token" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "token" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "value" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "value" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(ProgressParams(element))
@@ -6926,11 +6926,11 @@ type TextDocumentPositionParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentIdentifier.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "position" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "position" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
         then Ok(TextDocumentPositionParams(element))
@@ -6950,7 +6950,7 @@ type WorkDoneProgressParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(WorkDoneProgressParams(element))
@@ -6971,7 +6971,7 @@ type PartialResultParams(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "partialResultToken" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "partialResultToken" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ProgressToken.Parse(prop)))
             end
         then Ok(PartialResultParams(element))
@@ -6995,7 +6995,7 @@ type LocationLink(element: global.System.Text.Json.JsonElement) =
     /// The target resource identifier of this link.
     member _.TargetUri =
         let prop = element.GetProperty("targetUri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The full target range of this link. If the target for example is a symbol then target range is the
     /// range enclosing this symbol not including leading/trailing whitespace but everything else
@@ -7014,19 +7014,19 @@ type LocationLink(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "originSelectionRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "originSelectionRange" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "targetUri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "targetUri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "targetRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "targetRange" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "targetSelectionRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "targetSelectionRange" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
         then Ok(LocationLink(element))
@@ -7061,11 +7061,11 @@ type Range(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "start" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "start" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "end" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "end" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Position.Parse(prop)))
             end
         then Ok(Range(element))
@@ -7084,8 +7084,8 @@ type ImplementationOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ImplementationOptions(element))
         else Error()
@@ -7101,14 +7101,14 @@ type StaticRegistrationOptions(element: global.System.Text.Json.JsonElement) =
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "id" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "id" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(StaticRegistrationOptions(element))
         else Error()
@@ -7126,8 +7126,8 @@ type TypeDefinitionOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(TypeDefinitionOptions(element))
         else Error()
@@ -7162,24 +7162,24 @@ type ConfigurationItem(element: global.System.Text.Json.JsonElement) =
     member _.ScopeUri =
         match element.TryGetProperty("scopeUri") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspUri(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspUri(prop))
 
     /// The configuration section asked for.
     member _.Section =
         match element.TryGetProperty("section") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "scopeUri" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "scopeUri" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "section" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "section" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(ConfigurationItem(element))
         else Error()
@@ -7192,14 +7192,14 @@ type TextDocumentIdentifier(element: global.System.Text.Json.JsonElement) =
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
         then Ok(TextDocumentIdentifier(element))
         else Error()
@@ -7233,20 +7233,20 @@ type Color(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "red" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidDecimal prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "red" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidDecimal prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "green" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidDecimal prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "green" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidDecimal prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "blue" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidDecimal prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "blue" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidDecimal prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "alpha" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidDecimal prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "alpha" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidDecimal prop)
             end
         then Ok(Color(element))
         else Error()
@@ -7264,8 +7264,8 @@ type DocumentColorOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentColorOptions(element))
         else Error()
@@ -7283,8 +7283,8 @@ type FoldingRangeOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(FoldingRangeOptions(element))
         else Error()
@@ -7302,8 +7302,8 @@ type DeclarationOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DeclarationOptions(element))
         else Error()
@@ -7362,12 +7362,12 @@ type Position(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "line" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "line" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "character" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "character" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
         then Ok(Position(element))
         else Error()
@@ -7385,8 +7385,8 @@ type SelectionRangeOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(SelectionRangeOptions(element))
         else Error()
@@ -7407,8 +7407,8 @@ type CallHierarchyOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CallHierarchyOptions(element))
         else Error()
@@ -7487,8 +7487,8 @@ type LinkedEditingRangeOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(LinkedEditingRangeOptions(element))
         else Error()
@@ -7503,14 +7503,14 @@ type FileCreate(element: global.System.Text.Json.JsonElement) =
     /// A file:// URI for the location of the file/folder being created.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(FileCreate(element))
         else Error()
@@ -7556,7 +7556,7 @@ type CreateFile(element: global.System.Text.Json.JsonElement) =
     /// The resource to create.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// Additional options
     member _.Options =
@@ -7570,7 +7570,7 @@ type CreateFile(element: global.System.Text.Json.JsonElement) =
     member _.AnnotationId =
         match element.TryGetProperty("annotationId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome((global.SteelScript.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
+        | true, prop -> ValueSome((global.Amongonz.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(CreateFile(element))
@@ -7590,12 +7590,12 @@ type RenameFile(element: global.System.Text.Json.JsonElement) =
     /// The old (existing) location.
     member _.OldUri =
         let prop = element.GetProperty("oldUri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The new location.
     member _.NewUri =
         let prop = element.GetProperty("newUri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// Rename options.
     member _.Options =
@@ -7609,7 +7609,7 @@ type RenameFile(element: global.System.Text.Json.JsonElement) =
     member _.AnnotationId =
         match element.TryGetProperty("annotationId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome((global.SteelScript.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
+        | true, prop -> ValueSome((global.Amongonz.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(RenameFile(element))
@@ -7629,7 +7629,7 @@ type DeleteFile(element: global.System.Text.Json.JsonElement) =
     /// The file to delete.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// Delete options.
     member _.Options =
@@ -7643,7 +7643,7 @@ type DeleteFile(element: global.System.Text.Json.JsonElement) =
     member _.AnnotationId =
         match element.TryGetProperty("annotationId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome((global.SteelScript.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
+        | true, prop -> ValueSome((global.Amongonz.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(DeleteFile(element))
@@ -7659,7 +7659,7 @@ type ChangeAnnotation(element: global.System.Text.Json.JsonElement) =
     /// is rendered prominent in the user interface.
     member _.Label =
         let prop = element.GetProperty("label")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// A flag which indicates that user confirmation is needed
     /// before applying the change.
@@ -7673,22 +7673,22 @@ type ChangeAnnotation(element: global.System.Text.Json.JsonElement) =
     member _.Description =
         match element.TryGetProperty("description") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "label" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "label" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "needsConfirmation" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "needsConfirmation" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "description" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "description" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(ChangeAnnotation(element))
         else Error()
@@ -7705,7 +7705,7 @@ type FileOperationFilter(element: global.System.Text.Json.JsonElement) =
     member _.Scheme =
         match element.TryGetProperty("scheme") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The actual file operation pattern.
     member _.Pattern =
@@ -7716,11 +7716,11 @@ type FileOperationFilter(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "scheme" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "scheme" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "pattern" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "pattern" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (FileOperationPattern.Parse(prop)))
             end
         then Ok(FileOperationFilter(element))
@@ -7736,23 +7736,23 @@ type FileRename(element: global.System.Text.Json.JsonElement) =
     /// A file:// URI for the original location of the file/folder being renamed.
     member _.OldUri =
         let prop = element.GetProperty("oldUri")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// A file:// URI for the new location of the file/folder being renamed.
     member _.NewUri =
         let prop = element.GetProperty("newUri")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "oldUri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "oldUri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "newUri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "newUri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(FileRename(element))
         else Error()
@@ -7767,14 +7767,14 @@ type FileDelete(element: global.System.Text.Json.JsonElement) =
     /// A file:// URI for the location of the file/folder being deleted.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(FileDelete(element))
         else Error()
@@ -7792,8 +7792,8 @@ type MonikerOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(MonikerOptions(element))
         else Error()
@@ -7814,8 +7814,8 @@ type TypeHierarchyOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(TypeHierarchyOptions(element))
         else Error()
@@ -7840,11 +7840,11 @@ type InlineValueContext(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "frameId" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "frameId" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "stoppedLocation" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "stoppedLocation" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
         then Ok(InlineValueContext(element))
@@ -7865,18 +7865,18 @@ type InlineValueText(element: global.System.Text.Json.JsonElement) =
     /// The text of the inline value.
     member _.Text =
         let prop = element.GetProperty("text")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "text" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "text" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(InlineValueText(element))
         else Error()
@@ -7900,7 +7900,7 @@ type InlineValueVariableLookup(element: global.System.Text.Json.JsonElement) =
     member _.VariableName =
         match element.TryGetProperty("variableName") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// How to perform the lookup.
     member _.CaseSensitiveLookup =
@@ -7911,16 +7911,16 @@ type InlineValueVariableLookup(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "variableName" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "variableName" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "caseSensitiveLookup" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "caseSensitiveLookup" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineValueVariableLookup(element))
         else Error()
@@ -7944,18 +7944,18 @@ type InlineValueEvaluatableExpression(element: global.System.Text.Json.JsonEleme
     member _.Expression =
         match element.TryGetProperty("expression") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "expression" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "expression" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(InlineValueEvaluatableExpression(element))
         else Error()
@@ -7976,8 +7976,8 @@ type InlineValueOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineValueOptions(element))
         else Error()
@@ -7993,7 +7993,7 @@ type InlayHintLabelPart(element: global.System.Text.Json.JsonElement) =
     /// The value of this label part.
     member _.Value =
         let prop = element.GetProperty("value")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The tooltip text when you hover over this label part. Depending on
     /// the client capability `inlayHint.resolveSupport` clients might resolve
@@ -8067,18 +8067,18 @@ type MarkupContent(element: global.System.Text.Json.JsonElement) =
     /// The content itself
     member _.Value =
         let prop = element.GetProperty("value")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (MarkupKind.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "value" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "value" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(MarkupContent(element))
         else Error()
@@ -8106,12 +8106,12 @@ type InlayHintOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "resolveProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "resolveProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlayHintOptions(element))
         else Error()
@@ -8150,7 +8150,7 @@ type RelatedFullDocumentDiagnosticReport(element: global.System.Text.Json.JsonEl
     member _.ResultId =
         match element.TryGetProperty("resultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The actual items.
     member _.Items =
@@ -8197,7 +8197,7 @@ type RelatedUnchangedDocumentDiagnosticReport(element: global.System.Text.Json.J
     /// diagnostic request for the same document.
     member _.ResultId =
         let prop = element.GetProperty("resultId")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(RelatedUnchangedDocumentDiagnosticReport(element))
@@ -8222,7 +8222,7 @@ type FullDocumentDiagnosticReport(element: global.System.Text.Json.JsonElement) 
     member _.ResultId =
         match element.TryGetProperty("resultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The actual items.
     member _.Items =
@@ -8256,7 +8256,7 @@ type UnchangedDocumentDiagnosticReport(element: global.System.Text.Json.JsonElem
     /// diagnostic request for the same document.
     member _.ResultId =
         let prop = element.GetProperty("resultId")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(UnchangedDocumentDiagnosticReport(element))
@@ -8273,7 +8273,7 @@ type DiagnosticOptions(element: global.System.Text.Json.JsonElement) =
     member _.Identifier =
         match element.TryGetProperty("identifier") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// Whether the language has inter file dependencies meaning that
     /// editing code in one file can result in a different diagnostic
@@ -8297,20 +8297,20 @@ type DiagnosticOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "identifier" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "identifier" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "interFileDependencies" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "interFileDependencies" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workspaceDiagnostics" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workspaceDiagnostics" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DiagnosticOptions(element))
         else Error()
@@ -8326,23 +8326,23 @@ type PreviousResultId(element: global.System.Text.Json.JsonElement) =
     /// result id.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The value of the previous result id.
     member _.Value =
         let prop = element.GetProperty("value")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "value" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "value" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(PreviousResultId(element))
         else Error()
@@ -8357,12 +8357,12 @@ type NotebookDocument(element: global.System.Text.Json.JsonElement) =
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     /// The type of the notebook.
     member _.NotebookType =
         let prop = element.GetProperty("notebookType")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The version number of this document (it will increase after each
     /// change, including undo/redo).
@@ -8398,12 +8398,12 @@ type TextDocumentItem(element: global.System.Text.Json.JsonElement) =
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The text document&apos;s language identifier.
     member _.LanguageId =
         let prop = element.GetProperty("languageId")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The version number of this document (it will increase after each
     /// change, including undo/redo).
@@ -8414,26 +8414,26 @@ type TextDocumentItem(element: global.System.Text.Json.JsonElement) =
     /// The content of the opened text document.
     member _.Text =
         let prop = element.GetProperty("text")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "languageId" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "languageId" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "version" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "version" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "text" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "text" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(TextDocumentItem(element))
         else Error()
@@ -8453,18 +8453,18 @@ type VersionedNotebookDocumentIdentifier(element: global.System.Text.Json.JsonEl
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "version" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "version" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
         then Ok(VersionedNotebookDocumentIdentifier(element))
         else Error()
@@ -8505,14 +8505,14 @@ type NotebookDocumentIdentifier(element: global.System.Text.Json.JsonElement) =
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
         then Ok(NotebookDocumentIdentifier(element))
         else Error()
@@ -8540,11 +8540,11 @@ type InlineCompletionContext(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "triggerKind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "triggerKind" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "selectedCompletionInfo" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "selectedCompletionInfo" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SelectedCompletionInfo.Parse(prop)))
             end
         then Ok(InlineCompletionContext(element))
@@ -8574,7 +8574,7 @@ type StringValue(element: global.System.Text.Json.JsonElement) =
     /// The snippet string.
     member _.Value =
         let prop = element.GetProperty("value")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(StringValue(element))
@@ -8596,8 +8596,8 @@ type InlineCompletionOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineCompletionOptions(element))
         else Error()
@@ -8611,12 +8611,12 @@ type Registration(element: global.System.Text.Json.JsonElement) =
     /// the request again.
     member _.Id =
         let prop = element.GetProperty("id")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The method / capability to register for.
     member _.Method =
         let prop = element.GetProperty("method")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Options necessary for the registration.
     member _.RegisterOptions =
@@ -8628,15 +8628,15 @@ type Registration(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "id" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "id" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "method" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "method" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "registerOptions" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "registerOptions" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(Registration(element))
@@ -8651,23 +8651,23 @@ type Unregistration(element: global.System.Text.Json.JsonElement) =
     /// provided during the register request.
     member _.Id =
         let prop = element.GetProperty("id")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The method to unregister for.
     member _.Method =
         let prop = element.GetProperty("method")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "id" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "id" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "method" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "method" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(Unregistration(element))
         else Error()
@@ -8709,7 +8709,7 @@ type _InitializeParams(element: global.System.Text.Json.JsonElement) =
     member _.Locale =
         match element.TryGetProperty("locale") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The rootPath of the workspace. Is null
     /// if no folder is open.
@@ -9109,18 +9109,18 @@ type VersionedTextDocumentIdentifier(element: global.System.Text.Json.JsonElemen
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "version" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "version" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
         then Ok(VersionedTextDocumentIdentifier(element))
         else Error()
@@ -9140,8 +9140,8 @@ type SaveOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "includeText" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "includeText" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(SaveOptions(element))
         else Error()
@@ -9154,7 +9154,7 @@ type FileEvent(element: global.System.Text.Json.JsonElement) =
     /// The file&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The change type.
     member _.Type =
@@ -9165,11 +9165,11 @@ type FileEvent(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "type" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "type" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
         then Ok(FileEvent(element))
@@ -9198,11 +9198,11 @@ type FileSystemWatcher(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "globPattern" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "globPattern" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (GlobPattern.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> true)
             end
         then Ok(FileSystemWatcher(element))
@@ -9249,12 +9249,12 @@ type Diagnostic(element: global.System.Text.Json.JsonElement) =
     member _.Source =
         match element.TryGetProperty("source") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The diagnostic&apos;s message. It usually appears in the user interface
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Additional metadata about the diagnostic.
     /// 
@@ -9302,18 +9302,18 @@ type CompletionContext(element: global.System.Text.Json.JsonElement) =
     member _.TriggerCharacter =
         match element.TryGetProperty("triggerCharacter") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "triggerKind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "triggerKind" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "triggerCharacter" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "triggerCharacter" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(CompletionContext(element))
         else Error()
@@ -9330,25 +9330,25 @@ type CompletionItemLabelDetails(element: global.System.Text.Json.JsonElement) =
     member _.Detail =
         match element.TryGetProperty("detail") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// An optional string which is rendered less prominently after {@link CompletionItem.detail}. Should be used
     /// for fully qualified names and file paths.
     member _.Description =
         match element.TryGetProperty("description") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "detail" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "detail" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "description" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "description" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(CompletionItemLabelDetails(element))
         else Error()
@@ -9363,7 +9363,7 @@ type InsertReplaceEdit(element: global.System.Text.Json.JsonElement) =
     /// The string to be inserted.
     member _.NewText =
         let prop = element.GetProperty("newText")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The range if the insert is requested
     member _.Insert =
@@ -9379,15 +9379,15 @@ type InsertReplaceEdit(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "newText" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "newText" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "insert" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "insert" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "replace" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "replace" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
         then Ok(InsertReplaceEdit(element))
@@ -9468,8 +9468,8 @@ type HoverOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(HoverOptions(element))
         else Error()
@@ -9492,7 +9492,7 @@ type SignatureHelpContext(element: global.System.Text.Json.JsonElement) =
     member _.TriggerCharacter =
         match element.TryGetProperty("triggerCharacter") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// `true` if signature help was already showing when it was triggered.
     /// 
@@ -9515,19 +9515,19 @@ type SignatureHelpContext(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "triggerKind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "triggerKind" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "triggerCharacter" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "triggerCharacter" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "isRetrigger" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "isRetrigger" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "activeSignatureHelp" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "activeSignatureHelp" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SignatureHelp.Parse(prop)))
             end
         then Ok(SignatureHelpContext(element))
@@ -9544,7 +9544,7 @@ type SignatureInformation(element: global.System.Text.Json.JsonElement) =
     /// the UI.
     member _.Label =
         let prop = element.GetProperty("label")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The human-readable doc-comment of this signature. Will be shown
     /// in the UI but can be omitted.
@@ -9624,8 +9624,8 @@ type DefinitionOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DefinitionOptions(element))
         else Error()
@@ -9645,8 +9645,8 @@ type ReferenceContext(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "includeDeclaration" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "includeDeclaration" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ReferenceContext(element))
         else Error()
@@ -9665,8 +9665,8 @@ type ReferenceOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ReferenceOptions(element))
         else Error()
@@ -9685,8 +9685,8 @@ type DocumentHighlightOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentHighlightOptions(element))
         else Error()
@@ -9699,7 +9699,7 @@ type BaseSymbolInformation(element: global.System.Text.Json.JsonElement) =
     /// The name of this symbol.
     member _.Name =
         let prop = element.GetProperty("name")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The kind of this symbol.
     member _.Kind =
@@ -9723,7 +9723,7 @@ type BaseSymbolInformation(element: global.System.Text.Json.JsonElement) =
     member _.ContainerName =
         match element.TryGetProperty("containerName") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(BaseSymbolInformation(element))
@@ -9740,7 +9740,7 @@ type DocumentSymbolOptions(element: global.System.Text.Json.JsonElement) =
     member _.Label =
         match element.TryGetProperty("label") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     member _.WorkDoneProgress =
         match element.TryGetProperty("workDoneProgress") with
@@ -9751,12 +9751,12 @@ type DocumentSymbolOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "label" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "label" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentSymbolOptions(element))
         else Error()
@@ -9856,12 +9856,12 @@ type WorkspaceSymbolOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "resolveProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "resolveProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(WorkspaceSymbolOptions(element))
         else Error()
@@ -9886,12 +9886,12 @@ type CodeLensOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "resolveProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "resolveProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CodeLensOptions(element))
         else Error()
@@ -9916,12 +9916,12 @@ type DocumentLinkOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "resolveProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "resolveProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentLinkOptions(element))
         else Error()
@@ -9969,24 +9969,24 @@ type FormattingOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "tabSize" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "tabSize" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "insertSpaces" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "insertSpaces" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "trimTrailingWhitespace" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "trimTrailingWhitespace" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "insertFinalNewline" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "insertFinalNewline" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "trimFinalNewlines" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "trimFinalNewlines" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(FormattingOptions(element))
         else Error()
@@ -10005,8 +10005,8 @@ type DocumentFormattingOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentFormattingOptions(element))
         else Error()
@@ -10034,12 +10034,12 @@ type DocumentRangeFormattingOptions(element: global.System.Text.Json.JsonElement
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "rangesSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "rangesSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentRangeFormattingOptions(element))
         else Error()
@@ -10052,7 +10052,7 @@ type DocumentOnTypeFormattingOptions(element: global.System.Text.Json.JsonElemen
     /// A character on which formatting should be triggered, like `{`.
     member _.FirstTriggerCharacter =
         let prop = element.GetProperty("firstTriggerCharacter")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// More trigger characters.
     member _.MoreTriggerCharacter =
@@ -10087,12 +10087,12 @@ type RenameOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "prepareProvider" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "prepareProvider" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(RenameOptions(element))
         else Error()
@@ -10158,7 +10158,7 @@ type OptionalVersionedTextDocumentIdentifier(element: global.System.Text.Json.Js
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(OptionalVersionedTextDocumentIdentifier(element))
@@ -10173,7 +10173,7 @@ type AnnotatedTextEdit(element: global.System.Text.Json.JsonElement) =
     /// The actual identifier of the change annotation
     member _.AnnotationId =
         let prop = element.GetProperty("annotationId")
-        (global.SteelScript.LspTypes.LspString(prop): ChangeAnnotationIdentifier)
+        (global.Amongonz.LspTypes.LspString(prop): ChangeAnnotationIdentifier)
 
     /// The range of the text document to be manipulated. To insert
     /// text into a document create a range where start === end.
@@ -10185,22 +10185,22 @@ type AnnotatedTextEdit(element: global.System.Text.Json.JsonElement) =
     /// empty string.
     member _.NewText =
         let prop = element.GetProperty("newText")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "annotationId" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "annotationId" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "newText" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "newText" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(AnnotatedTextEdit(element))
         else Error()
@@ -10213,7 +10213,7 @@ type ResourceOperation(element: global.System.Text.Json.JsonElement) =
     /// The resource operation kind.
     member _.Kind =
         let prop = element.GetProperty("kind")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// An optional annotation identifier describing the operation.
     /// 
@@ -10221,18 +10221,18 @@ type ResourceOperation(element: global.System.Text.Json.JsonElement) =
     member _.AnnotationId =
         match element.TryGetProperty("annotationId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome((global.SteelScript.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
+        | true, prop -> ValueSome((global.Amongonz.LspTypes.LspString(prop): ChangeAnnotationIdentifier))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "annotationId" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "annotationId" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(ResourceOperation(element))
         else Error()
@@ -10258,12 +10258,12 @@ type CreateFileOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "overwrite" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "overwrite" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "ignoreIfExists" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "ignoreIfExists" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CreateFileOptions(element))
         else Error()
@@ -10289,12 +10289,12 @@ type RenameFileOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "overwrite" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "overwrite" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "ignoreIfExists" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "ignoreIfExists" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(RenameFileOptions(element))
         else Error()
@@ -10320,12 +10320,12 @@ type DeleteFileOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "recursive" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "recursive" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "ignoreIfNotExists" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "ignoreIfNotExists" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DeleteFileOptions(element))
         else Error()
@@ -10347,7 +10347,7 @@ type FileOperationPattern(element: global.System.Text.Json.JsonElement) =
     /// - `[!...]` to negate a range of characters to match in a path segment (e.g., `example.[!0-9]` to match on `example.a`, `example.b`, but not `example.0`)
     member _.Glob =
         let prop = element.GetProperty("glob")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// Whether to match files or folders with this pattern.
     /// 
@@ -10367,15 +10367,15 @@ type FileOperationPattern(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "glob" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "glob" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "matches" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "matches" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationPatternKind.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "options" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "options" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationPatternOptions.Parse(prop)))
             end
         then Ok(FileOperationPattern(element))
@@ -10391,7 +10391,7 @@ type WorkspaceFullDocumentDiagnosticReport(element: global.System.Text.Json.Json
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
@@ -10414,7 +10414,7 @@ type WorkspaceFullDocumentDiagnosticReport(element: global.System.Text.Json.Json
     member _.ResultId =
         match element.TryGetProperty("resultId") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// The actual items.
     member _.Items =
@@ -10436,7 +10436,7 @@ type WorkspaceUnchangedDocumentDiagnosticReport(element: global.System.Text.Json
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
@@ -10460,7 +10460,7 @@ type WorkspaceUnchangedDocumentDiagnosticReport(element: global.System.Text.Json
     /// diagnostic request for the same document.
     member _.ResultId =
         let prop = element.GetProperty("resultId")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(WorkspaceUnchangedDocumentDiagnosticReport(element))
@@ -10485,7 +10485,7 @@ type NotebookCell(element: global.System.Text.Json.JsonElement) =
     /// content.
     member _.Document =
         let prop = element.GetProperty("document")
-        global.SteelScript.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop)
 
     /// Additional metadata stored with the cell.
     /// 
@@ -10506,19 +10506,19 @@ type NotebookCell(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "kind" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "kind" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "document" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspDocumentUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "document" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "metadata" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "metadata" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LSPObject.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "executionSummary" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "executionSummary" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ExecutionSummary.Parse(prop)))
             end
         then Ok(NotebookCell(element))
@@ -10569,18 +10569,18 @@ type SelectedCompletionInfo(element: global.System.Text.Json.JsonElement) =
     /// The text the range will be replaced with if this completion is accepted.
     member _.Text =
         let prop = element.GetProperty("text")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "range" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "range" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Range.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "text" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "text" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(SelectedCompletionInfo(element))
         else Error()
@@ -10634,27 +10634,27 @@ type ClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workspace" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workspace" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (WorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "textDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "textDocument" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "notebookDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "notebookDocument" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (NotebookDocumentClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "window" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "window" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (WindowClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "general" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "general" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (GeneralClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "experimental" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "experimental" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LSPAny.Parse(prop)))
             end
         then Ok(ClientCapabilities(element))
@@ -10764,7 +10764,7 @@ type NotebookDocumentSyncRegistrationOptions(element: global.System.Text.Json.Js
     member _.Id =
         match element.TryGetProperty("id") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(NotebookDocumentSyncRegistrationOptions(element))
@@ -10843,27 +10843,27 @@ type FileOperationOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didCreate" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "didCreate" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willCreate" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "willCreate" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didRename" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "didRename" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willRename" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "willRename" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didDelete" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "didDelete" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willDelete" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "willDelete" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationRegistrationOptions.Parse(prop)))
             end
         then Ok(FileOperationOptions(element))
@@ -10879,14 +10879,14 @@ type CodeDescription(element: global.System.Text.Json.JsonElement) =
     /// An URI to open with more information about the diagnostic error.
     member _.Href =
         let prop = element.GetProperty("href")
-        global.SteelScript.LspTypes.LspUri(prop)
+        global.Amongonz.LspTypes.LspUri(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "href" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspUri.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "href" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
             end
         then Ok(CodeDescription(element))
         else Error()
@@ -10906,18 +10906,18 @@ type DiagnosticRelatedInformation(element: global.System.Text.Json.JsonElement) 
     /// The message of this related diagnostic information.
     member _.Message =
         let prop = element.GetProperty("message")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "location" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "location" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (Location.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "message" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "message" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(DiagnosticRelatedInformation(element))
         else Error()
@@ -10979,7 +10979,7 @@ type NotebookCellTextDocumentFilter(element: global.System.Text.Json.JsonElement
     member _.Language =
         match element.TryGetProperty("language") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(NotebookCellTextDocumentFilter(element))
@@ -11001,8 +11001,8 @@ type FileOperationPatternOptions(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "ignoreCase" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "ignoreCase" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(FileOperationPatternOptions(element))
         else Error()
@@ -11029,12 +11029,12 @@ type ExecutionSummary(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "executionOrder" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidInteger prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "executionOrder" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidInteger prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "success" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "success" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ExecutionSummary(element))
         else Error()
@@ -11164,63 +11164,63 @@ type WorkspaceClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "applyEdit" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "applyEdit" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workspaceEdit" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "workspaceEdit" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (WorkspaceEditClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didChangeConfiguration" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "didChangeConfiguration" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DidChangeConfigurationClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didChangeWatchedFiles" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "didChangeWatchedFiles" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DidChangeWatchedFilesClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "symbol" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "symbol" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (WorkspaceSymbolClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "executeCommand" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "executeCommand" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ExecuteCommandClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workspaceFolders" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workspaceFolders" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "configuration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "configuration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "semanticTokens" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "semanticTokens" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SemanticTokensWorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "codeLens" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "codeLens" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CodeLensWorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "fileOperations" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "fileOperations" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FileOperationClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "inlineValue" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "inlineValue" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (InlineValueWorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "inlayHint" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "inlayHint" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (InlayHintWorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "diagnostics" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "diagnostics" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DiagnosticWorkspaceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "foldingRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "foldingRange" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FoldingRangeWorkspaceClientCapabilities.Parse(prop)))
             end
         then Ok(WorkspaceClientCapabilities(element))
@@ -11453,127 +11453,127 @@ type TextDocumentClientCapabilities(element: global.System.Text.Json.JsonElement
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "synchronization" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "synchronization" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (TextDocumentSyncClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "completion" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "completion" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CompletionClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "hover" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "hover" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (HoverClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "signatureHelp" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "signatureHelp" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SignatureHelpClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "declaration" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "declaration" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DeclarationClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "definition" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "definition" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DefinitionClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "typeDefinition" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "typeDefinition" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (TypeDefinitionClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "implementation" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "implementation" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ImplementationClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "references" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "references" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ReferenceClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "documentHighlight" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "documentHighlight" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentHighlightClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "documentSymbol" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "documentSymbol" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentSymbolClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "codeAction" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "codeAction" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CodeActionClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "codeLens" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "codeLens" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CodeLensClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "documentLink" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "documentLink" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentLinkClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "colorProvider" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "colorProvider" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentColorClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "formatting" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "formatting" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentFormattingClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "rangeFormatting" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "rangeFormatting" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentRangeFormattingClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "onTypeFormatting" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "onTypeFormatting" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DocumentOnTypeFormattingClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "rename" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "rename" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (RenameClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "foldingRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "foldingRange" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (FoldingRangeClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "selectionRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "selectionRange" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SelectionRangeClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "publishDiagnostics" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "publishDiagnostics" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (PublishDiagnosticsClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "callHierarchy" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "callHierarchy" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (CallHierarchyClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "semanticTokens" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "semanticTokens" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (SemanticTokensClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "linkedEditingRange" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "linkedEditingRange" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (LinkedEditingRangeClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "moniker" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "moniker" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (MonikerClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "typeHierarchy" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "typeHierarchy" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (TypeHierarchyClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "inlineValue" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "inlineValue" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (InlineValueClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "inlayHint" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "inlayHint" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (InlayHintClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "diagnostic" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "diagnostic" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (DiagnosticClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "inlineCompletion" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "inlineCompletion" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (InlineCompletionClientCapabilities.Parse(prop)))
             end
         then Ok(TextDocumentClientCapabilities(element))
@@ -11597,7 +11597,7 @@ type NotebookDocumentClientCapabilities(element: global.System.Text.Json.JsonEle
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "synchronization" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "synchronization" element
                 |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (NotebookDocumentSyncClientCapabilities.Parse(prop)))
             end
         then Ok(NotebookDocumentClientCapabilities(element))
@@ -11641,15 +11641,15 @@ type WindowClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "workDoneProgress" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "workDoneProgress" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "showMessage" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "showMessage" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ShowMessageRequestClientCapabilities.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "showDocument" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "showDocument" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (ShowDocumentClientCapabilities.Parse(prop)))
             end
         then Ok(WindowClientCapabilities(element))
@@ -11739,7 +11739,7 @@ type RelativePattern(element: global.System.Text.Json.JsonElement) =
     /// The actual glob pattern;
     member _.Pattern =
         let prop = element.GetProperty("pattern")
-        (global.SteelScript.LspTypes.LspString(prop): Pattern)
+        (global.Amongonz.LspTypes.LspString(prop): Pattern)
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(RelativePattern(element))
@@ -11814,8 +11814,8 @@ type DidChangeConfigurationClientCapabilities(element: global.System.Text.Json.J
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DidChangeConfigurationClientCapabilities(element))
         else Error()
@@ -11845,12 +11845,12 @@ type DidChangeWatchedFilesClientCapabilities(element: global.System.Text.Json.Js
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "relativePatternSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "relativePatternSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DidChangeWatchedFilesClientCapabilities(element))
         else Error()
@@ -11915,8 +11915,8 @@ type ExecuteCommandClientCapabilities(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ExecuteCommandClientCapabilities(element))
         else Error()
@@ -11942,8 +11942,8 @@ type SemanticTokensWorkspaceClientCapabilities(element: global.System.Text.Json.
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(SemanticTokensWorkspaceClientCapabilities(element))
         else Error()
@@ -11969,8 +11969,8 @@ type CodeLensWorkspaceClientCapabilities(element: global.System.Text.Json.JsonEl
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CodeLensWorkspaceClientCapabilities(element))
         else Error()
@@ -12031,32 +12031,32 @@ type FileOperationClientCapabilities(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didCreate" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "didCreate" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willCreate" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "willCreate" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didRename" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "didRename" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willRename" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "willRename" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didDelete" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "didDelete" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willDelete" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "willDelete" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(FileOperationClientCapabilities(element))
         else Error()
@@ -12084,8 +12084,8 @@ type InlineValueWorkspaceClientCapabilities(element: global.System.Text.Json.Jso
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineValueWorkspaceClientCapabilities(element))
         else Error()
@@ -12113,8 +12113,8 @@ type InlayHintWorkspaceClientCapabilities(element: global.System.Text.Json.JsonE
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlayHintWorkspaceClientCapabilities(element))
         else Error()
@@ -12142,8 +12142,8 @@ type DiagnosticWorkspaceClientCapabilities(element: global.System.Text.Json.Json
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DiagnosticWorkspaceClientCapabilities(element))
         else Error()
@@ -12175,8 +12175,8 @@ type FoldingRangeWorkspaceClientCapabilities(element: global.System.Text.Json.Js
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "refreshSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "refreshSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(FoldingRangeWorkspaceClientCapabilities(element))
         else Error()
@@ -12215,20 +12215,20 @@ type TextDocumentSyncClientCapabilities(element: global.System.Text.Json.JsonEle
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willSave" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "willSave" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "willSaveWaitUntil" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "willSaveWaitUntil" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "didSave" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "didSave" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(TextDocumentSyncClientCapabilities(element))
         else Error()
@@ -12370,12 +12370,12 @@ type DeclarationClientCapabilities(element: global.System.Text.Json.JsonElement)
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "linkSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "linkSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DeclarationClientCapabilities(element))
         else Error()
@@ -12403,12 +12403,12 @@ type DefinitionClientCapabilities(element: global.System.Text.Json.JsonElement) 
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "linkSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "linkSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DefinitionClientCapabilities(element))
         else Error()
@@ -12438,12 +12438,12 @@ type TypeDefinitionClientCapabilities(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "linkSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "linkSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(TypeDefinitionClientCapabilities(element))
         else Error()
@@ -12473,12 +12473,12 @@ type ImplementationClientCapabilities(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "linkSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "linkSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ImplementationClientCapabilities(element))
         else Error()
@@ -12498,8 +12498,8 @@ type ReferenceClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ReferenceClientCapabilities(element))
         else Error()
@@ -12519,8 +12519,8 @@ type DocumentHighlightClientCapabilities(element: global.System.Text.Json.JsonEl
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentHighlightClientCapabilities(element))
         else Error()
@@ -12665,8 +12665,8 @@ type CodeLensClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CodeLensClientCapabilities(element))
         else Error()
@@ -12694,12 +12694,12 @@ type DocumentLinkClientCapabilities(element: global.System.Text.Json.JsonElement
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "tooltipSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "tooltipSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentLinkClientCapabilities(element))
         else Error()
@@ -12720,8 +12720,8 @@ type DocumentColorClientCapabilities(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentColorClientCapabilities(element))
         else Error()
@@ -12741,8 +12741,8 @@ type DocumentFormattingClientCapabilities(element: global.System.Text.Json.JsonE
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentFormattingClientCapabilities(element))
         else Error()
@@ -12771,12 +12771,12 @@ type DocumentRangeFormattingClientCapabilities(element: global.System.Text.Json.
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "rangesSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "rangesSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentRangeFormattingClientCapabilities(element))
         else Error()
@@ -12796,8 +12796,8 @@ type DocumentOnTypeFormattingClientCapabilities(element: global.System.Text.Json
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DocumentOnTypeFormattingClientCapabilities(element))
         else Error()
@@ -12848,20 +12848,20 @@ type RenameClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "prepareSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "prepareSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "prepareSupportDefaultBehavior" element
+                global.Amongonz.LspTypes.Validation.optionalProperty "prepareSupportDefaultBehavior" element
                 |> global.FSharp.Core.ValueOption.forall (fun prop -> true)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "honorsChangeAnnotations" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "honorsChangeAnnotations" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(RenameClientCapabilities(element))
         else Error()
@@ -12934,8 +12934,8 @@ type SelectionRangeClientCapabilities(element: global.System.Text.Json.JsonEleme
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(SelectionRangeClientCapabilities(element))
         else Error()
@@ -13009,8 +13009,8 @@ type CallHierarchyClientCapabilities(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(CallHierarchyClientCapabilities(element))
         else Error()
@@ -13123,8 +13123,8 @@ type LinkedEditingRangeClientCapabilities(element: global.System.Text.Json.JsonE
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(LinkedEditingRangeClientCapabilities(element))
         else Error()
@@ -13148,8 +13148,8 @@ type MonikerClientCapabilities(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(MonikerClientCapabilities(element))
         else Error()
@@ -13171,8 +13171,8 @@ type TypeHierarchyClientCapabilities(element: global.System.Text.Json.JsonElemen
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(TypeHierarchyClientCapabilities(element))
         else Error()
@@ -13194,8 +13194,8 @@ type InlineValueClientCapabilities(element: global.System.Text.Json.JsonElement)
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineValueClientCapabilities(element))
         else Error()
@@ -13250,12 +13250,12 @@ type DiagnosticClientCapabilities(element: global.System.Text.Json.JsonElement) 
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "relatedDocumentSupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "relatedDocumentSupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(DiagnosticClientCapabilities(element))
         else Error()
@@ -13278,8 +13278,8 @@ type InlineCompletionClientCapabilities(element: global.System.Text.Json.JsonEle
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(InlineCompletionClientCapabilities(element))
         else Error()
@@ -13310,12 +13310,12 @@ type NotebookDocumentSyncClientCapabilities(element: global.System.Text.Json.Jso
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "dynamicRegistration" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "dynamicRegistration" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "executionSummarySupport" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "executionSummarySupport" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(NotebookDocumentSyncClientCapabilities(element))
         else Error()
@@ -13353,8 +13353,8 @@ type ShowDocumentClientCapabilities(element: global.System.Text.Json.JsonElement
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "support" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.SteelScript.LspTypes.Validation.isValidBool prop)
+                global.Amongonz.LspTypes.Validation.optionalProperty "support" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidBool prop)
             end
         then Ok(ShowDocumentClientCapabilities(element))
         else Error()
@@ -13369,24 +13369,24 @@ type RegularExpressionsClientCapabilities(element: global.System.Text.Json.JsonE
     /// The engine&apos;s name.
     member _.Engine =
         let prop = element.GetProperty("engine")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The engine&apos;s version.
     member _.Version =
         match element.TryGetProperty("version") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "engine" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "engine" element
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
             && begin
-                global.SteelScript.LspTypes.Validation.optionalProperty "version" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.SteelScript.LspTypes.LspString.Parse(prop)))
+                global.Amongonz.LspTypes.Validation.optionalProperty "version" element
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspString.Parse(prop)))
             end
         then Ok(RegularExpressionsClientCapabilities(element))
         else Error()
@@ -13401,13 +13401,13 @@ type MarkdownClientCapabilities(element: global.System.Text.Json.JsonElement) =
     /// The name of the parser.
     member _.Parser =
         let prop = element.GetProperty("parser")
-        global.SteelScript.LspTypes.LspString(prop)
+        global.Amongonz.LspTypes.LspString(prop)
 
     /// The version of the parser.
     member _.Version =
         match element.TryGetProperty("version") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.SteelScript.LspTypes.LspString(prop))
+        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspString(prop))
 
     /// A list of HTML tags that the client allows / supports in
     /// Markdown.
@@ -13545,7 +13545,7 @@ type ProgressToken(element: global.System.Text.Json.JsonElement) =
     static member Parse(element) = Ok(ProgressToken(element))
 
 /// An identifier to refer to a change annotation stored with a workspace edit.
-type ChangeAnnotationIdentifier = global.SteelScript.LspTypes.LspString
+type ChangeAnnotationIdentifier = global.Amongonz.LspTypes.LspString
 
 /// A workspace diagnostic document report.
 /// 
@@ -13667,4 +13667,4 @@ type NotebookDocumentFilter(element: global.System.Text.Json.JsonElement) =
 /// - `[!...]` to negate a range of characters to match in a path segment (e.g., `example.[!0-9]` to match on `example.a`, `example.b`, but not `example.0`)
 /// 
 /// @since 3.17.0
-type Pattern = global.SteelScript.LspTypes.LspString
+type Pattern = global.Amongonz.LspTypes.LspString

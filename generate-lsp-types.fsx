@@ -113,7 +113,7 @@ let (|BaseAlias|RefAlias|ComplexAlias|BrokenAlias|) (aliasModel: LspMetaModel.Ty
 //
 
 printfn $"// This file was auto-generated."
-printfn $"namespace rec %s{lspTypesNs}"
+printfn $"namespace rec Amongonz.LspTypes"
 
 //
 // Enumerations

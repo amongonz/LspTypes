@@ -13,7 +13,7 @@
     <ItemGroup>
       <_LspTypes Include="Generated.fs" />
     </ItemGroup>
-
+    
     <Exec Command="dotnet fsi generate-lsp-types.fsx &gt; &quot;%(_LspTypes.FullPath)&quot;" />
   </Target>
 </Project>

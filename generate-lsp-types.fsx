@@ -75,7 +75,7 @@ type BaseType =
 
     member baseType.FSharpName =
         match baseType with
-        | BaseURI -> $"%s{lspTypesNs}.LspUri"
+        | BaseURI -> "global.System.Uri"
         | BaseDocumentUri -> $"%s{lspTypesNs}.LspDocumentUri"
         | BaseInt -> $"%s{fsharpCoreNs}.int"
         | BaseDecimal -> $"%s{fsharpCoreNs}.double"
@@ -273,8 +273,8 @@ for structModel in metaModel.Structures do
             match TypeKind.FromKind prop.Type.Kind with
             | KindBase ->
                 match BaseType.FromName prop.Type.Name.Value with
-                | BaseURI -> false, $"%s{BaseURI.FSharpName}(prop)"
-                | BaseDocumentUri -> false, $"%s{BaseDocumentUri.FSharpName}(prop)"
+                | BaseURI -> false, $"%s{BaseURI.FSharpName}(prop.GetString())"
+                | BaseDocumentUri -> false, $"%s{BaseDocumentUri.FSharpName}(prop.GetString())"
                 | BaseString -> false, $"%s{BaseString.FSharpName}(prop)"
                 | BaseInt -> false, "prop.GetInt32()"
                 | BaseDecimal -> false, "prop.GetDouble()"
@@ -336,7 +336,7 @@ for structModel in metaModel.Structures do
                 | KindBase ->
                     match BaseType.FromName prop.Type.Name.Value with
                     | BaseURI
-                    | BaseDocumentUri
+                    | BaseDocumentUri -> $"%s{lspTypesNs}.Validation.isValidUri prop"
                     | BaseString as baseType -> $"%s{fsharpCoreNs}.Result.isOk (%s{baseType.FSharpName}.Parse(prop))"
                     | BaseInt -> $"%s{lspTypesNs}.Validation.isValidInteger prop"
                     | BaseDecimal -> $"%s{lspTypesNs}.Validation.isValidDecimal prop"

@@ -1511,7 +1511,7 @@ type Location(element: global.System.Text.Json.JsonElement) =
 
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     member _.Range =
         let prop = element.GetProperty("range")
@@ -1522,7 +1522,7 @@ type Location(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "range" element
@@ -1632,7 +1632,7 @@ type WorkspaceFolder(element: global.System.Text.Json.JsonElement) =
     /// The associated URI for this workspace folder.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     /// The name of the workspace folder. Used to refer to this
     /// workspace folder in the user interface.
@@ -1645,7 +1645,7 @@ type WorkspaceFolder(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "name" element
@@ -2317,7 +2317,7 @@ type CallHierarchyItem(element: global.System.Text.Json.JsonElement) =
     /// The resource identifier of this item.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The range enclosing this symbol not including leading/trailing whitespace but everything else, e.g. comments and code.
     member _.Range =
@@ -2765,7 +2765,7 @@ type ShowDocumentParams(element: global.System.Text.Json.JsonElement) =
     /// The uri to show.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     /// Indicates to show the resource in an external program.
     /// To show, for example, `https://code.visualstudio.com/`
@@ -2798,7 +2798,7 @@ type ShowDocumentParams(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "external" element
@@ -3240,7 +3240,7 @@ type TypeHierarchyItem(element: global.System.Text.Json.JsonElement) =
     /// The resource identifier of this item.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The range enclosing this symbol not including leading/trailing whitespace
     /// but everything else, e.g. comments and code.
@@ -4624,7 +4624,7 @@ type PublishDiagnosticsParams(element: global.System.Text.Json.JsonElement) =
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// Optional the version number of the document the diagnostics are published for.
     /// 
@@ -6166,7 +6166,7 @@ type DocumentLink(element: global.System.Text.Json.JsonElement) =
     member _.Target =
         match element.TryGetProperty("target") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspUri(prop))
+        | true, prop -> ValueSome(global.System.Uri(prop.GetString()))
 
     /// The tooltip text when you hover over this link.
     /// 
@@ -6196,7 +6196,7 @@ type DocumentLink(element: global.System.Text.Json.JsonElement) =
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "target" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "tooltip" element
@@ -6995,7 +6995,7 @@ type LocationLink(element: global.System.Text.Json.JsonElement) =
     /// The target resource identifier of this link.
     member _.TargetUri =
         let prop = element.GetProperty("targetUri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The full target range of this link. If the target for example is a symbol then target range is the
     /// range enclosing this symbol not including leading/trailing whitespace but everything else
@@ -7019,7 +7019,7 @@ type LocationLink(element: global.System.Text.Json.JsonElement) =
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "targetUri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "targetRange" element
@@ -7162,7 +7162,7 @@ type ConfigurationItem(element: global.System.Text.Json.JsonElement) =
     member _.ScopeUri =
         match element.TryGetProperty("scopeUri") with
         | false, _ -> ValueNone
-        | true, prop -> ValueSome(global.Amongonz.LspTypes.LspUri(prop))
+        | true, prop -> ValueSome(global.System.Uri(prop.GetString()))
 
     /// The configuration section asked for.
     member _.Section =
@@ -7175,7 +7175,7 @@ type ConfigurationItem(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "scopeUri" element
-                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.forall (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "section" element
@@ -7192,14 +7192,14 @@ type TextDocumentIdentifier(element: global.System.Text.Json.JsonElement) =
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
         then Ok(TextDocumentIdentifier(element))
         else Error()
@@ -7556,7 +7556,7 @@ type CreateFile(element: global.System.Text.Json.JsonElement) =
     /// The resource to create.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// Additional options
     member _.Options =
@@ -7590,12 +7590,12 @@ type RenameFile(element: global.System.Text.Json.JsonElement) =
     /// The old (existing) location.
     member _.OldUri =
         let prop = element.GetProperty("oldUri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The new location.
     member _.NewUri =
         let prop = element.GetProperty("newUri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// Rename options.
     member _.Options =
@@ -7629,7 +7629,7 @@ type DeleteFile(element: global.System.Text.Json.JsonElement) =
     /// The file to delete.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// Delete options.
     member _.Options =
@@ -8326,7 +8326,7 @@ type PreviousResultId(element: global.System.Text.Json.JsonElement) =
     /// result id.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The value of the previous result id.
     member _.Value =
@@ -8338,7 +8338,7 @@ type PreviousResultId(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "value" element
@@ -8357,7 +8357,7 @@ type NotebookDocument(element: global.System.Text.Json.JsonElement) =
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     /// The type of the notebook.
     member _.NotebookType =
@@ -8398,7 +8398,7 @@ type TextDocumentItem(element: global.System.Text.Json.JsonElement) =
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The text document&apos;s language identifier.
     member _.LanguageId =
@@ -8421,7 +8421,7 @@ type TextDocumentItem(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "languageId" element
@@ -8453,7 +8453,7 @@ type VersionedNotebookDocumentIdentifier(element: global.System.Text.Json.JsonEl
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
@@ -8464,7 +8464,7 @@ type VersionedNotebookDocumentIdentifier(element: global.System.Text.Json.JsonEl
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
         then Ok(VersionedNotebookDocumentIdentifier(element))
         else Error()
@@ -8505,14 +8505,14 @@ type NotebookDocumentIdentifier(element: global.System.Text.Json.JsonElement) =
     /// The notebook document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
         then Ok(NotebookDocumentIdentifier(element))
         else Error()
@@ -9109,7 +9109,7 @@ type VersionedTextDocumentIdentifier(element: global.System.Text.Json.JsonElemen
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
@@ -9120,7 +9120,7 @@ type VersionedTextDocumentIdentifier(element: global.System.Text.Json.JsonElemen
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
         then Ok(VersionedTextDocumentIdentifier(element))
         else Error()
@@ -9154,7 +9154,7 @@ type FileEvent(element: global.System.Text.Json.JsonElement) =
     /// The file&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The change type.
     member _.Type =
@@ -9166,7 +9166,7 @@ type FileEvent(element: global.System.Text.Json.JsonElement) =
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "uri" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "type" element
@@ -10158,7 +10158,7 @@ type OptionalVersionedTextDocumentIdentifier(element: global.System.Text.Json.Js
     /// The text document&apos;s uri.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         Ok(OptionalVersionedTextDocumentIdentifier(element))
@@ -10391,7 +10391,7 @@ type WorkspaceFullDocumentDiagnosticReport(element: global.System.Text.Json.Json
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
@@ -10436,7 +10436,7 @@ type WorkspaceUnchangedDocumentDiagnosticReport(element: global.System.Text.Json
     /// The URI for which diagnostic information is reported.
     member _.Uri =
         let prop = element.GetProperty("uri")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// The version number for which the diagnostics are reported.
     /// If the document is not marked as open `null` can be provided.
@@ -10485,7 +10485,7 @@ type NotebookCell(element: global.System.Text.Json.JsonElement) =
     /// content.
     member _.Document =
         let prop = element.GetProperty("document")
-        global.Amongonz.LspTypes.LspDocumentUri(prop)
+        global.Amongonz.LspTypes.LspDocumentUri(prop.GetString())
 
     /// Additional metadata stored with the cell.
     /// 
@@ -10511,7 +10511,7 @@ type NotebookCell(element: global.System.Text.Json.JsonElement) =
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "document" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspDocumentUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "metadata" element
@@ -10879,14 +10879,14 @@ type CodeDescription(element: global.System.Text.Json.JsonElement) =
     /// An URI to open with more information about the diagnostic error.
     member _.Href =
         let prop = element.GetProperty("href")
-        global.Amongonz.LspTypes.LspUri(prop)
+        global.System.Uri(prop.GetString())
 
     static member Parse(element: global.System.Text.Json.JsonElement) =
         if
             true
             && begin
                 global.Amongonz.LspTypes.Validation.optionalProperty "href" element
-                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.FSharp.Core.Result.isOk (global.Amongonz.LspTypes.LspUri.Parse(prop)))
+                |> global.FSharp.Core.ValueOption.exists (fun prop -> global.Amongonz.LspTypes.Validation.isValidUri prop)
             end
         then Ok(CodeDescription(element))
         else Error()

@@ -13,24 +13,14 @@ type LspString(element: JsonElement) =
         | JsonValueKind.String -> Ok(LspString(element))
         | _ -> Error()
 
-[<Struct>]
-type LspUri(element: JsonElement) =
-    member _.AsElement = element
-    member _.GetUri() = Uri(element.GetString())
-
-    static member Parse(element: JsonElement) =
-        match LspString.Parse(element) with
-        | Ok str when Uri.IsWellFormedUriString(str.GetString(), UriKind.Absolute) ->
-            Ok(LspUri(element))
-        | _ -> Error()
-
-type LspDocumentUri = LspUri
+type LspDocumentUri = Uri
 
 module internal Validation =
     let optionalProperty (name: string) (element: JsonElement) =
         match element.TryGetProperty(name) with
         | false, _ -> ValueNone
         | true, value -> ValueSome value
+
 
     let isValidInteger (element: JsonElement) =
         match element.ValueKind with
@@ -52,4 +42,11 @@ module internal Validation =
         match element.ValueKind with
         | JsonValueKind.True
         | JsonValueKind.False -> true
+        | _ -> false
+
+    let isValidUri (element: JsonElement) =
+        // NOTE: This allocates both the string and an Uri;
+        // IsWellFormedUriString() calls TryCreate().
+        match element.ValueKind with
+        | JsonValueKind.String -> Uri.IsWellFormedUriString(element.GetString(), UriKind.Absolute)
         | _ -> false

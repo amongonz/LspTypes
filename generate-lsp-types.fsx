@@ -423,24 +423,24 @@ for structModel in metaModel.Structures do
                     printfn $"| LspJsonBacking.Obj(backingObj, _) ->"
 
                     indented (fun () ->
-                        printfn $"    match backingObj.%s{camelCase prop.Name} with"
-                        printfn $"    | None -> ValueNone"
-                        printfn $"    | Some value -> ValueSome value")
+                        printfn $"match backingObj.%s{camelCase prop.Name} with"
+                        printfn $"| None -> ValueNone"
+                        printfn $"| Some value -> ValueSome value")
 
                     printfn $"| LspJsonBacking.Element elem ->"
 
                     indented (fun () ->
-                        printfn $"    match elem.TryGetProperty(%A{prop.Name}) with"
-                        printfn $"    | false, _ -> ValueNone"
-                        printfn $"    | true, prop -> ValueSome(%s{getValue})")
+                        printfn $"match elem.TryGetProperty(%A{prop.Name}) with"
+                        printfn $"| false, _ -> ValueNone"
+                        printfn $"| true, prop -> ValueSome(%s{getValue})")
                 else
                     printfn $"match backing with"
                     printfn $"| LspJsonBacking.Obj(backingObj, _) -> backingObj.%s{camelCase prop.Name}"
                     printfn $"| LspJsonBacking.Element elem ->"
 
                     indented (fun () ->
-                        printfn $"    let prop = elem.GetProperty(%A{prop.Name})"
-                        printfn $"    %s{getValue}"))
+                        printfn $"let prop = elem.GetProperty(%A{prop.Name})"
+                        printfn $"%s{getValue}"))
 
         printfn $""
         printf $"static member Create("
@@ -462,13 +462,15 @@ for structModel in metaModel.Structures do
                 for p = 0 to sortedProperties.Length - 1 do
                     let prop = sortedProperties[p]
 
-                    if p <> 0 then
-                        printfn $", "
-
                     if defaultArg prop.Optional false then
                         printf $"?"
 
-                    printfn $"%s{camelCase prop.Name}: %s{fsharpTypeForProperty prop}")
+                    printf $"%s{camelCase prop.Name}: %s{fsharpTypeForProperty prop}"
+
+                    if p < sortedProperties.Length - 1 then
+                        printfn $","
+                    else
+                        printfn $"")
 
         printfn $") ="
 
@@ -568,56 +570,58 @@ for structModel in metaModel.Structures do
                     printfn $"true"
 
                     for prop in properties do
-                        let isPropValid =
+                        let writeIsValid () =
                             match TypeKind.FromKind prop.Type.Kind with
                             | KindBase ->
                                 match BaseType.FromName prop.Type.Name.Value with
                                 | BaseURI
-                                | BaseDocumentUri -> $"%s{lspTypesNs}.Validation.isValidUri prop"
+                                | BaseDocumentUri -> printfn $"%s{lspTypesNs}.Validation.isValidUri prop"
                                 | BaseString as baseType ->
-                                    $"%s{fsharpCoreNs}.Result.isOk (%s{baseType.FSharpName}.Parse(prop))"
-                                | BaseInt -> $"%s{lspTypesNs}.Validation.isValidInteger prop"
-                                | BaseDecimal -> $"%s{lspTypesNs}.Validation.isValidDecimal prop"
-                                | BaseBool -> $"%s{lspTypesNs}.Validation.isValidBool prop"
+                                    printfn $"%s{fsharpCoreNs}.Result.isOk (%s{baseType.FSharpName}.Parse(prop))"
+                                | BaseInt -> printfn $"%s{lspTypesNs}.Validation.isValidInteger prop"
+                                | BaseDecimal -> printfn $"%s{lspTypesNs}.Validation.isValidDecimal prop"
+                                | BaseBool -> printfn $"%s{lspTypesNs}.Validation.isValidBool prop"
                             | KindReference ->
                                 match typeRefLookup[prop.Type.Name.Value] with
                                 | StructModel structModel
                                 | AliasModel(RefAlias(StructModel structModel)) ->
-                                    $"%s{fsharpCoreNs}.Result.isOk (%s{structModel.Name}.Parse(prop))"
+                                    printfn $"%s{fsharpCoreNs}.Result.isOk (%s{structModel.Name}.Parse(prop))"
                                 | EnumModel enumModel
                                 | AliasModel(RefAlias(EnumModel enumModel)) ->
                                     match TypeKind.FromKind enumModel.Type.Kind with
                                     | KindBase ->
                                         match BaseType.FromName enumModel.Type.Name with
                                         | BaseString ->
-                                            $"%s{fsharpCoreNs}.Result.isOk (%s{enumModel.Name}.Parse(prop))"
-                                        | BaseInt -> "true"
+                                            printfn $"%s{fsharpCoreNs}.Result.isOk (%s{enumModel.Name}.Parse(prop))"
+                                        | BaseInt -> printfn $"true"
                                         | name -> failwith $"Not implemented: KindBase, %A{name}"
                                     | kind -> failwith $"Not implemented: %A{kind}"
                                 | AliasModel(BaseAlias BaseString) ->
-                                    $"%s{fsharpCoreNs}.Result.isOk (%s{BaseString.FSharpName}.Parse(prop))"
-                                | AliasModel(BaseAlias BaseInt) -> $"%s{lspTypesNs}.Validation.isValidInteger prop"
+                                    printfn $"%s{fsharpCoreNs}.Result.isOk (%s{BaseString.FSharpName}.Parse(prop))"
+                                | AliasModel(BaseAlias BaseInt) ->
+                                    printfn $"%s{lspTypesNs}.Validation.isValidInteger prop"
                                 | AliasModel(ComplexAlias _ as aliasModel) ->
-                                    $"%s{fsharpCoreNs}.Result.isOk (%s{aliasModel.Name}.Parse(prop))"
+                                    printfn $"%s{fsharpCoreNs}.Result.isOk (%s{aliasModel.Name}.Parse(prop))"
                                 | AliasModel aliasModel -> failwith $"Not implemented: %s{aliasModel.Name}"
                             | KindOr
                             | KindArray
                             | KindMap
                             | KindLiteral
-                            | KindStringLiteral -> "true"
+                            | KindStringLiteral -> printfn $"true"
                             | kind -> failwith $"Unhandled type kind: %A{kind}"
 
-                        printfn $"&& ("
+                        printfn $"&&"
 
                         indented (fun () ->
                             printfn $"%s{lspTypesNs}.Validation.optionalProperty %A{prop.Name} element"
 
                             if defaultArg prop.Optional false then
-                                printfn $"|> %s{fsharpCoreNs}.ValueOption.forall (fun prop -> %s{isPropValid})"
+                                printfn $"|> %s{fsharpCoreNs}.ValueOption.forall (fun prop ->"
                             else
-                                printfn $"|> %s{fsharpCoreNs}.ValueOption.exists (fun prop -> %s{isPropValid})")
+                                printfn $"|> %s{fsharpCoreNs}.ValueOption.exists (fun prop ->"
 
-                        printfn $")")
+                            indented (fun () -> writeIsValid ())
+                            printfn $")"))
 
                 printfn $"then"
                 indented (fun () -> printfn $"%s{fsharpCoreNs}.Ok(%s{structModel.Name}.FromElement(element))")

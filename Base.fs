@@ -4,21 +4,24 @@ open System
 open System.Runtime.CompilerServices
 open System.Text.Json
 
+type ILspJsonBackingObj =
+    abstract WriteTo: writer: Utf8JsonWriter -> unit
+
 [<RequireQualifiedAccess>]
 [<Struct; IsReadOnly>]
-type LspJsonBacking<'Backing> =
+type LspJsonBacking<'Backing when 'Backing :> ILspJsonBackingObj> =
     | Element of Element: JsonElement
-    | Obj of Backing: 'Backing * WriteTo: ('Backing -> Utf8JsonWriter -> unit)
+    | Obj of Backing: 'Backing
 
-    member backing.GetBoxed() =
+    member backing.Boxed =
         match backing with
         | Element elem -> Element elem
-        | Obj(backingObj, writeTo) -> Obj(box backingObj, unbox<'Backing> >> writeTo)
+        | Obj backingObj -> Obj(backingObj :> ILspJsonBackingObj)
 
     member backing.WriteTo(writer) =
         match backing with
         | Element elem -> elem.WriteTo(writer)
-        | Obj(backingObj, writeTo) -> writeTo backingObj writer
+        | Obj backingObj -> backingObj.WriteTo(writer)
 
     member backing.GetElement() =
         match backing with
@@ -27,29 +30,40 @@ type LspJsonBacking<'Backing> =
 
     member backing.GetObj() =
         match backing with
-        | Obj(backingObj, _) -> backingObj
-        | _ -> invalidOp "Not backed by obj."
+        | Obj backingObj -> backingObj
+        | _ -> invalidOp "Not backed by an object."
+
+type private ILspString =
+    inherit ILspJsonBackingObj
+    abstract Value: string
 
 [<Struct; IsReadOnly>]
-type LspString(backing: LspJsonBacking<string>) =
-    member _.GetBacking() = backing
+type LspString private (backing: LspJsonBacking<ILspString>) =
+    member _.GetBacking() = backing.Boxed
     member _.WriteTo(writer) = backing.WriteTo(writer)
 
     member _.GetString() =
         match backing with
         | LspJsonBacking.Element elem -> elem.GetString()
-        | LspJsonBacking.Obj(backing, _) -> backing
+        | LspJsonBacking.Obj backingObj -> backingObj.Value
 
     member _.ValueEquals(other: string) =
         match backing with
         | LspJsonBacking.Element elem -> elem.ValueEquals(other)
-        | LspJsonBacking.Obj(backing, _) -> backing.Equals(other, StringComparison.Ordinal)
+        | LspJsonBacking.Obj backingObj -> backingObj.Value.Equals(other, StringComparison.Ordinal)
 
     static member FromElement(element) =
         LspString(LspJsonBacking.Element element)
 
     static member FromString(value) =
-        LspString(LspJsonBacking.Obj(value, (fun value writer -> writer.WriteStringValue(value))))
+        LspString(
+            LspJsonBacking.Obj(
+                { new ILspString with
+                    member _.Value = value
+                    member _.WriteTo(writer) = writer.WriteStringValue(value)
+                }
+            )
+        )
 
     static member Parse(element: JsonElement) =
         match element.ValueKind with

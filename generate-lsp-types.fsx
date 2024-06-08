@@ -303,7 +303,7 @@ indented (fun () ->
 // Structures
 //
 
-let fsharpTypeForProperty (prop: LspMetaModel.Property) =
+let fsharpInnerTypeForProperty (prop: LspMetaModel.Property) =
     match TypeKind.FromKind prop.Type.Kind with
     | KindBase -> BaseType.FromName(prop.Type.Name.Value).FSharpName
     | KindReference -> pascalCase typeRefLookup[prop.Type.Name.Value].Name
@@ -311,15 +311,18 @@ let fsharpTypeForProperty (prop: LspMetaModel.Property) =
     | KindArray
     | KindMap
     | KindLiteral
-    | KindStringLiteral -> $"%s{lspTypesNs}.LspJsonBacking<obj>"
+    | KindStringLiteral -> $"%s{lspTypesNs}.LspJsonBacking<ILspJsonBackingObj>"
     | kind -> failwith $"Unhandled type kind: %A{kind}"
 
+let fsharpOuterTypeForProperty (prop: LspMetaModel.Property) =
+    let inner = fsharpInnerTypeForProperty prop
+
+    if defaultArg prop.Optional false then
+        $"%s{inner} option"
+    else
+        inner
+
 for structModel in metaModel.Structures do
-    printfn $""
-
-    for line in docLines structModel.Documentation do
-        printfn $"/// %s{line}"
-
     let properties =
         [|
             yield! structModel.Properties
@@ -330,29 +333,31 @@ for structModel in metaModel.Structures do
         |]
         |> Array.distinctBy _.Name
 
+    let backingType =
+        if properties.Length > 0 then
+            printfn $""
+            printfn $"type private I%s{pascalCase structModel.Name} ="
+
+            indented (fun () ->
+                printfn $"inherit %s{lspTypesNs}.ILspJsonBackingObj"
+
+                for prop in properties do
+                    printfn $"abstract %s{camelCase prop.Name}: %s{fsharpOuterTypeForProperty prop}")
+
+            $"I%s{pascalCase structModel.Name}"
+        else
+            $"%s{lspTypesNs}.ILspJsonBackingObj"
+
+    printfn $""
+
+    for line in docLines structModel.Documentation do
+        printfn $"/// %s{line}"
+
     printfn $"[<%s{fsharpCoreNs}.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]"
-    printf $"type %s{structModel.Name} private (backing: %s{lspTypesNs}.LspJsonBacking<"
-
-    if properties.Length = 0 then
-        printf $"%s{fsharpCoreNs}.obj"
-    else
-        printfn $"{{| "
-
-        indented (fun () ->
-            for prop in properties do
-                printf $"%s{camelCase prop.Name}: %s{fsharpTypeForProperty prop}"
-
-                if defaultArg prop.Optional false then
-                    printf $" option"
-
-                printfn $";")
-
-        printf $"|}}"
-
-    printfn $">) ="
+    printfn $"type %s{pascalCase structModel.Name} private (backing: %s{lspTypesNs}.LspJsonBacking<%s{backingType}>) ="
 
     indented (fun () ->
-        printfn $"member _.GetBacking() = backing.GetBoxed()"
+        printfn $"member _.GetBacking() = backing.Boxed"
         printfn $"member _.WriteTo(writer) = backing.WriteTo(writer)"
         printfn $""
         printfn $"static member FromElement(element) ="
@@ -420,7 +425,7 @@ for structModel in metaModel.Structures do
 
                 if defaultArg prop.Optional false then
                     printfn $"match backing with"
-                    printfn $"| LspJsonBacking.Obj(backingObj, _) ->"
+                    printfn $"| LspJsonBacking.Obj backingObj ->"
 
                     indented (fun () ->
                         printfn $"match backingObj.%s{camelCase prop.Name} with"
@@ -435,7 +440,7 @@ for structModel in metaModel.Structures do
                         printfn $"| true, prop -> ValueSome(%s{getValue})")
                 else
                     printfn $"match backing with"
-                    printfn $"| LspJsonBacking.Obj(backingObj, _) -> backingObj.%s{camelCase prop.Name}"
+                    printfn $"| LspJsonBacking.Obj backingObj -> backingObj.%s{camelCase prop.Name}"
                     printfn $"| LspJsonBacking.Element elem ->"
 
                     indented (fun () ->
@@ -465,7 +470,7 @@ for structModel in metaModel.Structures do
                     if defaultArg prop.Optional false then
                         printf $"?"
 
-                    printf $"%s{camelCase prop.Name}: %s{fsharpTypeForProperty prop}"
+                    printf $"%s{camelCase prop.Name}: %s{fsharpInnerTypeForProperty prop}"
 
                     if p < sortedProperties.Length - 1 then
                         printfn $","
@@ -478,84 +483,91 @@ for structModel in metaModel.Structures do
             printfn $"%s{structModel.Name}(%s{lspTypesNs}.LspJsonBacking.Obj("
 
             indented (fun () ->
-                if properties.Length = 0 then
-                    printfn $"obj(),"
-                else
-                    printfn $"{{|"
-
-                    indented (fun () ->
-                        for prop in properties do
-                            let name = camelCase prop.Name
-                            printfn $"%s{name} = %s{name};")
-
-                    printfn $"|}},"
-
-                printfn $"(fun backingObj writer ->"
+                printfn $"{{ new %s{backingType} with"
 
                 indented (fun () ->
-                    printfn $"writer.WriteStartObject()"
-
                     for prop in properties do
-                        let writeProperty () =
-                            match TypeKind.FromKind prop.Type.Kind with
-                            | KindBase ->
-                                match BaseType.FromName prop.Type.Name.Value with
-                                | BaseBool -> printfn $"writer.WriteBoolean(%A{prop.Name}, value)"
-                                | BaseDecimal -> printfn $"writer.WriteNumber(%A{prop.Name}, value)"
-                                | BaseInt -> printfn $"writer.WriteNumber(%A{prop.Name}, value)"
-                                | BaseString ->
-                                    printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                    printfn $"value.WriteTo(writer)"
-                                | BaseURI
-                                | BaseDocumentUri ->
-                                    printfn $"writer.WriteString(%A{prop.Name}, value.OriginalString)"
-                            | KindReference ->
-                                match typeRefLookup[prop.Type.Name.Value] with
-                                | StructModel _
-                                | AliasModel(RefAlias(StructModel _)) ->
-                                    printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                    printfn $"value.WriteTo(writer)"
-                                | EnumModel enumModel
-                                | AliasModel(RefAlias(EnumModel enumModel)) ->
-                                    match TypeKind.FromKind enumModel.Type.Kind with
-                                    | KindBase ->
-                                        match BaseType.FromName enumModel.Type.Name with
-                                        | BaseString ->
-                                            printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                            printfn $"value.WriteTo(writer)"
-                                        | BaseInt -> printfn $"writer.WriteNumber(%A{prop.Name}, int value)"
-                                        | name -> failwith $"Not implemented: KindBase, %A{name}"
-                                    | kind -> failwith $"Not implemented: %A{kind}"
-                                | AliasModel(BaseAlias BaseString) ->
-                                    printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                    printfn $"value.WriteTo(writer)"
-                                | AliasModel(BaseAlias BaseInt) ->
-                                    printfn $"writer.WriteNumber(%A{prop.Name}, value)"
-                                | AliasModel(ComplexAlias _) ->
-                                    printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                    printfn $"value.WriteTo(writer)"
-                                | AliasModel aliasModel -> failwith $"Not implemented: %s{aliasModel.Name}"
-                            | KindOr
-                            | KindArray
-                            | KindMap
-                            | KindLiteral
-                            | KindStringLiteral ->
-                                printfn $"writer.WritePropertyName(%A{prop.Name})"
-                                printfn $"value.WriteTo(writer)"
-                            | kind -> failwith $"Unhandled type kind: %A{kind}"
+                        let name = camelCase prop.Name
+                        printfn $"member _.%s{name} = %s{name}"
 
-                        if defaultArg prop.Optional false then
-                            printfn $"match backingObj.%s{camelCase prop.Name} with"
-                            printfn $"| %s{fsharpCoreNs}.None -> ()"
-                            printfn $"| %s{fsharpCoreNs}.Some value ->"
-                            indented writeProperty
-                        else
-                            printfn $"let value = backingObj.%s{camelCase prop.Name}"
-                            writeProperty ()
+                    printfn $""
+                    printfn $"member _.WriteTo(``json writer``) ="
 
-                    printfn $"writer.WriteEndObject()")
+                    indented (fun () ->
+                        printfn $"``json writer``.WriteStartObject()"
 
-                printfn $")))"))
+                        for prop in properties do
+                            let writeProperty () =
+                                match TypeKind.FromKind prop.Type.Kind with
+                                | KindBase ->
+                                    match BaseType.FromName prop.Type.Name.Value with
+                                    | BaseBool ->
+                                        printfn
+                                            $"``json writer``.WriteBoolean(%A{prop.Name}, %s{camelCase prop.Name})"
+                                    | BaseDecimal ->
+                                        printfn
+                                            $"``json writer``.WriteNumber(%A{prop.Name}, %s{camelCase prop.Name})"
+                                    | BaseInt ->
+                                        printfn
+                                            $"``json writer``.WriteNumber(%A{prop.Name}, %s{camelCase prop.Name})"
+                                    | BaseString ->
+                                        printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                        printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                    | BaseURI
+                                    | BaseDocumentUri ->
+                                        printfn
+                                            $"``json writer``.WriteString(%A{prop.Name}, %s{camelCase prop.Name}.OriginalString)"
+                                | KindReference ->
+                                    match typeRefLookup[prop.Type.Name.Value] with
+                                    | StructModel _
+                                    | AliasModel(RefAlias(StructModel _)) ->
+                                        printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                        printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                    | EnumModel enumModel
+                                    | AliasModel(RefAlias(EnumModel enumModel)) ->
+                                        match TypeKind.FromKind enumModel.Type.Kind with
+                                        | KindBase ->
+                                            match BaseType.FromName enumModel.Type.Name with
+                                            | BaseString ->
+                                                printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                                printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                            | BaseInt ->
+                                                printfn
+                                                    $"``json writer``.WriteNumber(%A{prop.Name}, int %s{camelCase prop.Name})"
+                                            | name -> failwith $"Not implemented: KindBase, %A{name}"
+                                        | kind -> failwith $"Not implemented: %A{kind}"
+                                    | AliasModel(BaseAlias BaseString) ->
+                                        printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                        printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                    | AliasModel(BaseAlias BaseInt) ->
+                                        printfn
+                                            $"``json writer``.WriteNumber(%A{prop.Name}, %s{camelCase prop.Name})"
+                                    | AliasModel(ComplexAlias _) ->
+                                        printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                        printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                    | AliasModel aliasModel -> failwith $"Not implemented: %s{aliasModel.Name}"
+                                | KindOr
+                                | KindArray
+                                | KindMap
+                                | KindLiteral
+                                | KindStringLiteral ->
+                                    printfn $"``json writer``.WritePropertyName(%A{prop.Name})"
+                                    printfn $"%s{camelCase prop.Name}.WriteTo(``json writer``)"
+                                | kind -> failwith $"Unhandled type kind: %A{kind}"
+
+                            if defaultArg prop.Optional false then
+                                printfn $"match %s{camelCase prop.Name} with"
+                                printfn $"| %s{fsharpCoreNs}.None -> ()"
+                                printfn $"| %s{fsharpCoreNs}.Some %s{camelCase prop.Name} ->"
+                                indented writeProperty
+                            else
+                                writeProperty ()
+
+                        printfn $"``json writer``.WriteEndObject()"))
+
+                printfn $"}}")
+
+            printfn $"))")
 
         printfn $""
         printfn $"static member Parse(element: %s{jsonNs}.JsonElement) ="
@@ -647,7 +659,7 @@ for aliasModel in metaModel.TypeAliases do
     | RefAlias model -> printfn $"type %s{aliasModel.Name} = %s{model.Name}"
     | ComplexAlias ->
         printfn $"[<%s{fsharpCoreNs}.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]"
-        printfn $"type %s{aliasModel.Name}(backing: %s{lspTypesNs}.LspJsonBacking<obj>) ="
+        printfn $"type %s{aliasModel.Name}(backing: %s{lspTypesNs}.LspJsonBacking<ILspJsonBackingObj>) ="
 
         indented (fun () ->
             printfn $"// Complex type kind: %s{aliasModel.Type.Kind}."

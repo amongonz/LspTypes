@@ -37,6 +37,19 @@ type LspJsonBacking<'Backing when 'Backing :> ILspJsonBackingObj> =
         | Obj backingObj -> backingObj
         | _ -> invalidOp "Not backed by an object."
 
+    static member ObjArray(items: seq<'Backing>) =
+        Obj(
+            { new ILspJsonBackingObj with
+                member _.WriteTo(writer) =
+                    writer.WriteStartArray()
+
+                    for item in items do
+                        item.WriteTo(writer)
+
+                    writer.WriteEndArray()
+            }
+        )
+
 type private ILspString =
     inherit ILspJsonBackingObj
     abstract Value: string

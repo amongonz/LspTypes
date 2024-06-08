@@ -168,7 +168,11 @@ for enumModel in metaModel.Enumerations do
 
                     printfn $""
                     printfn $"member _.GetBacking() = stringValue.GetBacking()"
-                    printfn $"member _.WriteTo(writer) = stringValue.WriteTo(writer)"
+                    printfn $""
+                    printfn $"interface ILspJsonBackingObj with"
+                    indented (fun () -> printfn $"member _.WriteTo(writer) = stringValue.WriteTo(writer)")
+                    printfn $""
+                    printfn $"member this.WriteTo(writer) = (this :> ILspJsonBackingObj).WriteTo(writer)"
                     printfn $""
                     printfn $"member _.StringValue = stringValue"
                     printfn $"member _.ValueEquals(other) = stringValue.ValueEquals(other)"
@@ -358,7 +362,11 @@ for structModel in metaModel.Structures do
 
     indented (fun () ->
         printfn $"member _.GetBacking() = backing.Boxed"
-        printfn $"member _.WriteTo(writer) = backing.WriteTo(writer)"
+        printfn $""
+        printfn $"interface ILspJsonBackingObj with"
+        indented (fun () -> printfn $"member _.WriteTo(writer) = backing.WriteTo(writer)")
+        printfn $""
+        printfn $"member this.WriteTo(writer) = (this :> ILspJsonBackingObj).WriteTo(writer)"
         printfn $""
         printfn $"static member FromElement(element) ="
         indented (fun () -> printfn $"%s{structModel.Name}(%s{lspTypesNs}.LspJsonBacking.Element element)")
@@ -665,7 +673,11 @@ for aliasModel in metaModel.TypeAliases do
             printfn $"// Complex type kind: %s{aliasModel.Type.Kind}."
             printfn $""
             printfn $"member _.GetBacking() = backing"
-            printfn $"member _.WriteTo(writer) = backing.WriteTo(writer)"
+            printfn $""
+            printfn $"interface ILspJsonBackingObj with"
+            indented (fun () -> printfn $"member _.WriteTo(writer) = backing.WriteTo(writer)")
+            printfn $""
+            printfn $"member this.WriteTo(writer) = (this :> ILspJsonBackingObj).WriteTo(writer)"
             printfn $""
             printfn $"static member FromElement(element) ="
             indented (fun () -> printfn $"%s{aliasModel.Name}(%s{lspTypesNs}.LspJsonBacking.Element element)")

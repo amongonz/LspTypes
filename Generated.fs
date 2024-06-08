@@ -269,7 +269,12 @@ type DocumentDiagnosticReportKind(stringValue: global.Amongonz.LspTypes.LspStrin
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -455,7 +460,12 @@ type UniquenessLevel(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -529,7 +539,12 @@ type MonikerKind(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -842,7 +857,12 @@ type TraceValues(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -901,7 +921,12 @@ type MarkupKind(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -1103,7 +1128,12 @@ type FileOperationPatternKind(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -1161,7 +1191,12 @@ type ResourceOperationKind(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -1217,7 +1252,12 @@ type FailureHandlingKind(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -1289,7 +1329,12 @@ type TokenFormat(stringValue: global.Amongonz.LspTypes.LspString) =
         | _ -> global.FSharp.Core.Error()
 
     member _.GetBacking() = stringValue.GetBacking()
-    member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = stringValue.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.StringValue = stringValue
     member _.ValueEquals(other) = stringValue.ValueEquals(other)
@@ -1616,7 +1661,12 @@ type private IImplementationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ImplementationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IImplementationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ImplementationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -1731,7 +1781,12 @@ type private ILocation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Location private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILocation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Location(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -1789,7 +1844,12 @@ type private IImplementationRegistrationOptions =
 type ImplementationRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IImplementationRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ImplementationRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -1858,7 +1918,12 @@ type private ITypeDefinitionParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TypeDefinitionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeDefinitionParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeDefinitionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -1972,7 +2037,12 @@ type private ITypeDefinitionRegistrationOptions =
 type TypeDefinitionRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeDefinitionRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeDefinitionRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2040,7 +2110,12 @@ type private IWorkspaceFolder =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceFolder private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceFolder>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceFolder(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2102,7 +2177,12 @@ type private IDidChangeWorkspaceFoldersParams =
 type DidChangeWorkspaceFoldersParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeWorkspaceFoldersParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeWorkspaceFoldersParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2149,7 +2229,12 @@ type private IConfigurationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ConfigurationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IConfigurationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ConfigurationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2191,7 +2276,12 @@ type private IDocumentColorParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentColorParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentColorParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentColorParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2290,7 +2380,12 @@ type private IColorInformation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ColorInformation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IColorInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ColorInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2350,7 +2445,12 @@ type private IDocumentColorRegistrationOptions =
 type DocumentColorRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentColorRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentColorRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2421,7 +2521,12 @@ type private IColorPresentationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ColorPresentationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IColorPresentationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ColorPresentationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2548,7 +2653,12 @@ type private IColorPresentation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ColorPresentation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IColorPresentation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ColorPresentation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2637,7 +2747,12 @@ type private IWorkDoneProgressOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkDoneProgressOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2692,7 +2807,12 @@ type private ITextDocumentRegistrationOptions =
 type TextDocumentRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2736,7 +2856,12 @@ type private IFoldingRangeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FoldingRangeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRangeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRangeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -2840,7 +2965,12 @@ type private IFoldingRange =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FoldingRange private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRange>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRange(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3004,7 +3134,12 @@ type private IFoldingRangeRegistrationOptions =
 type FoldingRangeRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRangeRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRangeRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3073,7 +3208,12 @@ type private IDeclarationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DeclarationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeclarationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeclarationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3187,7 +3327,12 @@ type private IDeclarationRegistrationOptions =
 type DeclarationRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeclarationRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeclarationRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3257,7 +3402,12 @@ type private ISelectionRangeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SelectionRangeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectionRangeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectionRangeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3357,7 +3507,12 @@ type private ISelectionRange =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SelectionRange private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectionRange>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectionRange(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3427,7 +3582,12 @@ type private ISelectionRangeRegistrationOptions =
 type SelectionRangeRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectionRangeRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectionRangeRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3494,7 +3654,12 @@ type private IWorkDoneProgressCreateParams =
 type WorkDoneProgressCreateParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressCreateParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressCreateParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3541,7 +3706,12 @@ type private IWorkDoneProgressCancelParams =
 type WorkDoneProgressCancelParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressCancelParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressCancelParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3593,7 +3763,12 @@ type private ICallHierarchyPrepareParams =
 type CallHierarchyPrepareParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyPrepareParams>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyPrepareParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3689,7 +3864,12 @@ type private ICallHierarchyItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CallHierarchyItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3847,7 +4027,12 @@ type private ICallHierarchyRegistrationOptions =
 type CallHierarchyRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -3919,7 +4104,12 @@ type private ICallHierarchyIncomingCallsParams =
 type CallHierarchyIncomingCallsParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyIncomingCallsParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyIncomingCallsParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4015,7 +4205,12 @@ type private ICallHierarchyIncomingCall =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CallHierarchyIncomingCall private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyIncomingCall>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyIncomingCall(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4074,7 +4269,12 @@ type private ICallHierarchyOutgoingCallsParams =
 type CallHierarchyOutgoingCallsParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyOutgoingCallsParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyOutgoingCallsParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4170,7 +4370,12 @@ type private ICallHierarchyOutgoingCall =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CallHierarchyOutgoingCall private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyOutgoingCall>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyOutgoingCall(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4227,7 +4432,12 @@ type private ISemanticTokensParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4326,7 +4536,12 @@ type private ISemanticTokens =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokens private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokens>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokens(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4395,7 +4610,12 @@ type private ISemanticTokensPartialResult =
 type SemanticTokensPartialResult
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensPartialResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensPartialResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4440,7 +4660,12 @@ type private ISemanticTokensRegistrationOptions =
 type SemanticTokensRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4567,7 +4792,12 @@ type private ISemanticTokensDeltaParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensDeltaParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensDeltaParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensDeltaParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4682,7 +4912,12 @@ type private ISemanticTokensDelta =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensDelta private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensDelta>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensDelta(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4747,7 +4982,12 @@ type private ISemanticTokensDeltaPartialResult =
 type SemanticTokensDeltaPartialResult
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensDeltaPartialResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensDeltaPartialResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4790,7 +5030,12 @@ type private ISemanticTokensRangeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensRangeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensRangeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensRangeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -4907,7 +5152,12 @@ type private IShowDocumentParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ShowDocumentParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5032,7 +5282,12 @@ type private IShowDocumentResult =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ShowDocumentResult private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowDocumentResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowDocumentResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5079,7 +5334,12 @@ type private ILinkedEditingRangeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LinkedEditingRangeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILinkedEditingRangeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LinkedEditingRangeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5168,7 +5428,12 @@ type private ILinkedEditingRanges =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LinkedEditingRanges private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILinkedEditingRanges>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LinkedEditingRanges(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5237,7 +5502,12 @@ type private ILinkedEditingRangeRegistrationOptions =
 type LinkedEditingRangeRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILinkedEditingRangeRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LinkedEditingRangeRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5307,7 +5577,12 @@ type private ICreateFilesParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CreateFilesParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICreateFilesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CreateFilesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5361,7 +5636,12 @@ type private IWorkspaceEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5475,7 +5755,12 @@ type private IFileOperationRegistrationOptions =
 type FileOperationRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5519,7 +5804,12 @@ type private IRenameFilesParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameFilesParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameFilesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameFilesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5564,7 +5854,12 @@ type private IDeleteFilesParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DeleteFilesParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeleteFilesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeleteFilesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5607,7 +5902,12 @@ type private IMonikerParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type MonikerParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMonikerParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MonikerParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5725,7 +6025,12 @@ type private IMoniker =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Moniker private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMoniker>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Moniker(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5830,7 +6135,12 @@ type private IMonikerRegistrationOptions =
 type MonikerRegistrationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMonikerRegistrationOptions>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MonikerRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5877,7 +6187,12 @@ type private ITypeHierarchyPrepareParams =
 type TypeHierarchyPrepareParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchyPrepareParams>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchyPrepareParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -5970,7 +6285,12 @@ type private ITypeHierarchyItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TypeHierarchyItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchyItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchyItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6132,7 +6452,12 @@ type private ITypeHierarchyRegistrationOptions =
 type TypeHierarchyRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchyRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchyRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6204,7 +6529,12 @@ type private ITypeHierarchySupertypesParams =
 type TypeHierarchySupertypesParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchySupertypesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchySupertypesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6302,7 +6632,12 @@ type private ITypeHierarchySubtypesParams =
 type TypeHierarchySubtypesParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchySubtypesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchySubtypesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6400,7 +6735,12 @@ type private IInlineValueParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineValueParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6508,7 +6848,12 @@ type private IInlineValueRegistrationOptions =
 type InlineValueRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6579,7 +6924,12 @@ type private IInlayHintParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlayHintParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6673,7 +7023,12 @@ type private IInlayHint =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlayHint private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHint>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHint(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6875,7 +7230,12 @@ type private IInlayHintRegistrationOptions =
 type InlayHintRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -6969,7 +7329,12 @@ type private IDocumentDiagnosticParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentDiagnosticParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentDiagnosticParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentDiagnosticParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7116,7 +7481,12 @@ type private IDocumentDiagnosticReportPartialResult =
 type DocumentDiagnosticReportPartialResult
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentDiagnosticReportPartialResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentDiagnosticReportPartialResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7159,7 +7529,12 @@ type private IDiagnosticServerCancellationData =
 type DiagnosticServerCancellationData
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticServerCancellationData>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticServerCancellationData(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7211,7 +7586,12 @@ type private IDiagnosticRegistrationOptions =
 type DiagnosticRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7330,7 +7710,12 @@ type private IWorkspaceDiagnosticParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceDiagnosticParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceDiagnosticParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceDiagnosticParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7440,7 +7825,12 @@ type private IWorkspaceDiagnosticReport =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceDiagnosticReport private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7483,7 +7873,12 @@ type private IWorkspaceDiagnosticReportPartialResult =
 type WorkspaceDiagnosticReportPartialResult
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceDiagnosticReportPartialResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceDiagnosticReportPartialResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7527,7 +7922,12 @@ type private IDidOpenNotebookDocumentParams =
 type DidOpenNotebookDocumentParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidOpenNotebookDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidOpenNotebookDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7588,7 +7988,12 @@ type private IDidChangeNotebookDocumentParams =
 type DidChangeNotebookDocumentParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeNotebookDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeNotebookDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7669,7 +8074,12 @@ type private IDidSaveNotebookDocumentParams =
 type DidSaveNotebookDocumentParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidSaveNotebookDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidSaveNotebookDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7720,7 +8130,12 @@ type private IDidCloseNotebookDocumentParams =
 type DidCloseNotebookDocumentParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidCloseNotebookDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidCloseNotebookDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7783,7 +8198,12 @@ type private IInlineCompletionParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineCompletionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7891,7 +8311,12 @@ type private IInlineCompletionList =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineCompletionList private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionList>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionList(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -7938,7 +8363,12 @@ type private IInlineCompletionItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineCompletionItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8048,7 +8478,12 @@ type private IInlineCompletionRegistrationOptions =
 type InlineCompletionRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8114,7 +8549,12 @@ type private IRegistrationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RegistrationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRegistrationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RegistrationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8153,7 +8593,12 @@ type private IUnregistrationParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type UnregistrationParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IUnregistrationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         UnregistrationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8200,7 +8645,12 @@ type private IInitializeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InitializeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInitializeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InitializeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8427,7 +8877,12 @@ type private IInitializeResult =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InitializeResult private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInitializeResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InitializeResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8495,7 +8950,12 @@ type private IInitializeError =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InitializeError private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInitializeError>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InitializeError(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8540,7 +9000,12 @@ type InitializeError private (backing: global.Amongonz.LspTypes.LspJsonBacking<I
 type InitializedParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<global.Amongonz.LspTypes.ILspJsonBackingObj>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InitializedParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8572,7 +9037,12 @@ type private IDidChangeConfigurationParams =
 type DidChangeConfigurationParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeConfigurationParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeConfigurationParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8619,7 +9089,12 @@ type private IDidChangeConfigurationRegistrationOptions =
 type DidChangeConfigurationRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeConfigurationRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeConfigurationRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8669,7 +9144,12 @@ type private IShowMessageParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ShowMessageParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowMessageParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowMessageParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8729,7 +9209,12 @@ type private IShowMessageRequestParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ShowMessageRequestParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowMessageRequestParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowMessageRequestParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8804,7 +9289,12 @@ type private IMessageActionItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type MessageActionItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMessageActionItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MessageActionItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8852,7 +9342,12 @@ type private ILogMessageParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LogMessageParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILogMessageParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LogMessageParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8911,7 +9406,12 @@ type private IDidOpenTextDocumentParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DidOpenTextDocumentParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidOpenTextDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidOpenTextDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -8960,7 +9460,12 @@ type private IDidChangeTextDocumentParams =
 type DidChangeTextDocumentParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeTextDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeTextDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9030,7 +9535,12 @@ type private ITextDocumentChangeRegistrationOptions =
 type TextDocumentChangeRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentChangeRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentChangeRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9087,7 +9597,12 @@ type private IDidCloseTextDocumentParams =
 type DidCloseTextDocumentParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidCloseTextDocumentParams>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidCloseTextDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9135,7 +9650,12 @@ type private IDidSaveTextDocumentParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DidSaveTextDocumentParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidSaveTextDocumentParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidSaveTextDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9208,7 +9728,12 @@ type private ITextDocumentSaveRegistrationOptions =
 type TextDocumentSaveRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentSaveRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentSaveRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9275,7 +9800,12 @@ type private IWillSaveTextDocumentParams =
 type WillSaveTextDocumentParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWillSaveTextDocumentParams>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WillSaveTextDocumentParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9335,7 +9865,12 @@ type private ITextEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TextEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9398,7 +9933,12 @@ type private IDidChangeWatchedFilesParams =
 type DidChangeWatchedFilesParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeWatchedFilesParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeWatchedFilesParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9440,7 +9980,12 @@ type private IDidChangeWatchedFilesRegistrationOptions =
 type DidChangeWatchedFilesRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeWatchedFilesRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeWatchedFilesRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9483,7 +10028,12 @@ type private IPublishDiagnosticsParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type PublishDiagnosticsParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPublishDiagnosticsParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PublishDiagnosticsParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9563,7 +10113,12 @@ type private ICompletionParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CompletionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -9720,7 +10275,12 @@ type private ICompletionItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CompletionItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10210,7 +10770,12 @@ type private ICompletionList =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CompletionList private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionList>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionList(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10308,7 +10873,12 @@ type private ICompletionRegistrationOptions =
 type CompletionRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10459,7 +11029,12 @@ type private IHoverParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type HoverParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IHoverParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         HoverParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10546,7 +11121,12 @@ type private IHover =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Hover private (backing: global.Amongonz.LspTypes.LspJsonBacking<IHover>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Hover(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10608,7 +11188,12 @@ type private IHoverRegistrationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type HoverRegistrationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IHoverRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         HoverRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10653,7 +11238,12 @@ type private ISignatureHelpParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SignatureHelpParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelpParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelpParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10773,7 +11363,12 @@ type private ISignatureHelp =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SignatureHelp private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelp>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelp(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10873,7 +11468,12 @@ type private ISignatureHelpRegistrationOptions =
 type SignatureHelpRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelpRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelpRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -10971,7 +11571,12 @@ type private IDefinitionParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DefinitionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDefinitionParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DefinitionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11085,7 +11690,12 @@ type private IDefinitionRegistrationOptions =
 type DefinitionRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDefinitionRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DefinitionRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11131,7 +11741,12 @@ type private IReferenceParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ReferenceParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IReferenceParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ReferenceParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11259,7 +11874,12 @@ type private IReferenceRegistrationOptions =
 type ReferenceRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IReferenceRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ReferenceRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11304,7 +11924,12 @@ type private IDocumentHighlightParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentHighlightParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentHighlightParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentHighlightParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11420,7 +12045,12 @@ type private IDocumentHighlight =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentHighlight private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentHighlight>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentHighlight(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11487,7 +12117,12 @@ type private IDocumentHighlightRegistrationOptions =
 type DocumentHighlightRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentHighlightRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentHighlightRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11531,7 +12166,12 @@ type private IDocumentSymbolParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentSymbolParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentSymbolParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSymbolParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11635,7 +12275,12 @@ type private ISymbolInformation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SymbolInformation private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISymbolInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SymbolInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11789,7 +12434,12 @@ type private IDocumentSymbol =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentSymbol private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentSymbol>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSymbol(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -11963,7 +12613,12 @@ type private IDocumentSymbolRegistrationOptions =
 type DocumentSymbolRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentSymbolRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSymbolRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12036,7 +12691,12 @@ type private ICodeActionParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeActionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeActionParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeActionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12168,7 +12828,12 @@ type private ICommand =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Command private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICommand>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Command(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12256,7 +12921,12 @@ type private ICodeAction =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeAction private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeAction>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeAction(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12472,7 +13142,12 @@ type private ICodeActionRegistrationOptions =
 type CodeActionRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeActionRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeActionRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12567,7 +13242,12 @@ type private IWorkspaceSymbolParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceSymbolParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceSymbolParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceSymbolParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12675,7 +13355,12 @@ type private IWorkspaceSymbol =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceSymbol private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceSymbol>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceSymbol(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12817,7 +13502,12 @@ type private IWorkspaceSymbolRegistrationOptions =
 type WorkspaceSymbolRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceSymbolRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceSymbolRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12877,7 +13567,12 @@ type private ICodeLensParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeLensParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLensParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLensParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -12981,7 +13676,12 @@ type private ICodeLens =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeLens private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLens>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLens(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13075,7 +13775,12 @@ type private ICodeLensRegistrationOptions =
 type CodeLensRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLensRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLensRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13142,7 +13847,12 @@ type private IDocumentLinkParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentLinkParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentLinkParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentLinkParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13244,7 +13954,12 @@ type private IDocumentLink =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentLink private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentLink>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentLink(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13371,7 +14086,12 @@ type private IDocumentLinkRegistrationOptions =
 type DocumentLinkRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentLinkRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentLinkRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13438,7 +14158,12 @@ type private IDocumentFormattingParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentFormattingParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentFormattingParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentFormattingParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13524,7 +14249,12 @@ type private IDocumentFormattingRegistrationOptions =
 type DocumentFormattingRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentFormattingRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentFormattingRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13570,7 +14300,12 @@ type private IDocumentRangeFormattingParams =
 type DocumentRangeFormattingParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentRangeFormattingParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentRangeFormattingParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13675,7 +14410,12 @@ type private IDocumentRangeFormattingRegistrationOptions =
 type DocumentRangeFormattingRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentRangeFormattingRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentRangeFormattingRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13750,7 +14490,12 @@ type private IDocumentRangesFormattingParams =
 type DocumentRangesFormattingParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentRangesFormattingParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentRangesFormattingParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13843,7 +14588,12 @@ type private IDocumentOnTypeFormattingParams =
 type DocumentOnTypeFormattingParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentOnTypeFormattingParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentOnTypeFormattingParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -13946,7 +14696,12 @@ type private IDocumentOnTypeFormattingRegistrationOptions =
 type DocumentOnTypeFormattingRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentOnTypeFormattingRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentOnTypeFormattingRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14029,7 +14784,12 @@ type private IRenameParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14136,7 +14896,12 @@ type private IRenameRegistrationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameRegistrationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14204,7 +14969,12 @@ type private IPrepareRenameParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type PrepareRenameParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPrepareRenameParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PrepareRenameParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14292,7 +15062,12 @@ type private IExecuteCommandParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ExecuteCommandParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IExecuteCommandParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ExecuteCommandParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14378,7 +15153,12 @@ type private IExecuteCommandRegistrationOptions =
 type ExecuteCommandRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IExecuteCommandRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ExecuteCommandRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14420,7 +15200,12 @@ type private IApplyWorkspaceEditParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ApplyWorkspaceEditParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IApplyWorkspaceEditParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ApplyWorkspaceEditParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14496,7 +15281,12 @@ type private IApplyWorkspaceEditResult =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ApplyWorkspaceEditResult private (backing: global.Amongonz.LspTypes.LspJsonBacking<IApplyWorkspaceEditResult>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ApplyWorkspaceEditResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14598,7 +15388,12 @@ type private IWorkDoneProgressBegin =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkDoneProgressBegin private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressBegin>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressBegin(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14728,7 +15523,12 @@ type private IWorkDoneProgressReport =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkDoneProgressReport private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14842,7 +15642,12 @@ type private IWorkDoneProgressEnd =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkDoneProgressEnd private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressEnd>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressEnd(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14906,7 +15711,12 @@ type private ISetTraceParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SetTraceParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISetTraceParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SetTraceParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -14952,7 +15762,12 @@ type private ILogTraceParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LogTraceParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILogTraceParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LogTraceParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15021,7 +15836,12 @@ type private ICancelParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CancelParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICancelParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CancelParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15062,7 +15882,12 @@ type private IProgressParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ProgressParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IProgressParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ProgressParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15126,7 +15951,12 @@ type private ITextDocumentPositionParams =
 type TextDocumentPositionParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentPositionParams>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentPositionParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15186,7 +16016,12 @@ type private IWorkDoneProgressParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkDoneProgressParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkDoneProgressParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkDoneProgressParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15241,7 +16076,12 @@ type private IPartialResultParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type PartialResultParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPartialResultParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PartialResultParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15302,7 +16142,12 @@ type private ILocationLink =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LocationLink private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILocationLink>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LocationLink(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15419,7 +16264,12 @@ type private IRange =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Range private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRange>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Range(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15479,7 +16329,12 @@ type private IImplementationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ImplementationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IImplementationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ImplementationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15534,7 +16389,12 @@ type private IStaticRegistrationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type StaticRegistrationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IStaticRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         StaticRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15590,7 +16450,12 @@ type private ITypeDefinitionOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TypeDefinitionOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeDefinitionOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeDefinitionOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15646,7 +16511,12 @@ type private IWorkspaceFoldersChangeEvent =
 type WorkspaceFoldersChangeEvent
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceFoldersChangeEvent>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceFoldersChangeEvent(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15704,7 +16574,12 @@ type private IConfigurationItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ConfigurationItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<IConfigurationItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ConfigurationItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15781,7 +16656,12 @@ type private ITextDocumentIdentifier =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TextDocumentIdentifier private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentIdentifier>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentIdentifier(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15830,7 +16710,12 @@ type private IColor =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Color private (backing: global.Amongonz.LspTypes.LspJsonBacking<IColor>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Color(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15920,7 +16805,12 @@ type private IDocumentColorOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentColorOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentColorOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentColorOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -15973,7 +16863,12 @@ type private IFoldingRangeOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FoldingRangeOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRangeOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRangeOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16026,7 +16921,12 @@ type private IDeclarationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DeclarationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeclarationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeclarationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16107,7 +17007,12 @@ type private IPosition =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Position private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPosition>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Position(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16174,7 +17079,12 @@ type private ISelectionRangeOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SelectionRangeOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectionRangeOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectionRangeOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16230,7 +17140,12 @@ type private ICallHierarchyOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CallHierarchyOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16287,7 +17202,12 @@ type private ISemanticTokensOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16395,7 +17315,12 @@ type private ISemanticTokensEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16469,7 +17394,12 @@ type private ILinkedEditingRangeOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type LinkedEditingRangeOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILinkedEditingRangeOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LinkedEditingRangeOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16525,7 +17455,12 @@ type private IFileCreate =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileCreate private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileCreate>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileCreate(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16576,7 +17511,12 @@ type private ITextDocumentEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TextDocumentEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16638,7 +17578,12 @@ type private ICreateFile =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CreateFile private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICreateFile>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CreateFile(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16741,7 +17686,12 @@ type private IRenameFile =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameFile private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameFile>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameFile(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16854,7 +17804,12 @@ type private IDeleteFile =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DeleteFile private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeleteFile>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeleteFile(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -16957,7 +17912,12 @@ type private IChangeAnnotation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ChangeAnnotation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IChangeAnnotation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ChangeAnnotation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17060,7 +18020,12 @@ type private IFileOperationFilter =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileOperationFilter private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationFilter>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationFilter(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17133,7 +18098,12 @@ type private IFileRename =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileRename private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileRename>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileRename(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17198,7 +18168,12 @@ type private IFileDelete =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileDelete private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileDelete>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileDelete(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17244,7 +18219,12 @@ type private IMonikerOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type MonikerOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMonikerOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MonikerOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17300,7 +18280,12 @@ type private ITypeHierarchyOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TypeHierarchyOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchyOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchyOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17355,7 +18340,12 @@ type private IInlineValueContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineValueContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17418,7 +18408,12 @@ type private IInlineValueText =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineValueText private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueText>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueText(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17484,7 +18479,12 @@ type private IInlineValueVariableLookup =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineValueVariableLookup private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueVariableLookup>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueVariableLookup(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17578,7 +18578,12 @@ type private IInlineValueEvaluatableExpression =
 type InlineValueEvaluatableExpression
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueEvaluatableExpression>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueEvaluatableExpression(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17650,7 +18655,12 @@ type private IInlineValueOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineValueOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17710,7 +18720,12 @@ type private IInlayHintLabelPart =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlayHintLabelPart private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintLabelPart>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintLabelPart(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17852,7 +18867,12 @@ type private IMarkupContent =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type MarkupContent private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMarkupContent>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MarkupContent(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -17916,7 +18936,12 @@ type private IInlayHintOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlayHintOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18000,7 +19025,12 @@ type private IRelatedFullDocumentDiagnosticReport =
 type RelatedFullDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRelatedFullDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RelatedFullDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18115,7 +19145,12 @@ type private IRelatedUnchangedDocumentDiagnosticReport =
 type RelatedUnchangedDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRelatedUnchangedDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RelatedUnchangedDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18209,7 +19244,12 @@ type private IFullDocumentDiagnosticReport =
 type FullDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFullDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FullDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18295,7 +19335,12 @@ type private IUnchangedDocumentDiagnosticReport =
 type UnchangedDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IUnchangedDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         UnchangedDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18360,7 +19405,12 @@ type private IDiagnosticOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DiagnosticOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18476,7 +19526,12 @@ type private IPreviousResultId =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type PreviousResultId private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPreviousResultId>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PreviousResultId(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18545,7 +19600,12 @@ type private INotebookDocument =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type NotebookDocument private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocument>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocument(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18652,7 +19712,12 @@ type private ITextDocumentItem =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TextDocumentItem private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentItem>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentItem(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18750,7 +19815,12 @@ type private IVersionedNotebookDocumentIdentifier =
 type VersionedNotebookDocumentIdentifier
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IVersionedNotebookDocumentIdentifier>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         VersionedNotebookDocumentIdentifier(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18813,7 +19883,12 @@ type private INotebookDocumentChangeEvent =
 type NotebookDocumentChangeEvent
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentChangeEvent>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentChangeEvent(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18889,7 +19964,12 @@ type private INotebookDocumentIdentifier =
 type NotebookDocumentIdentifier private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentIdentifier>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentIdentifier(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -18939,7 +20019,12 @@ type private IInlineCompletionContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineCompletionContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19019,7 +20104,12 @@ type private IStringValue =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type StringValue private (backing: global.Amongonz.LspTypes.LspJsonBacking<IStringValue>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         StringValue(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19078,7 +20168,12 @@ type private IInlineCompletionOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InlineCompletionOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19134,7 +20229,12 @@ type private IRegistration =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Registration private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRegistration>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Registration(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19225,7 +20325,12 @@ type private IUnregistration =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Unregistration private (backing: global.Amongonz.LspTypes.LspJsonBacking<IUnregistration>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Unregistration(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19295,7 +20400,12 @@ type private I_InitializeParams =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type _InitializeParams private (backing: global.Amongonz.LspTypes.LspJsonBacking<I_InitializeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         _InitializeParams (global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19513,7 +20623,12 @@ type private IWorkspaceFoldersInitializeParams =
 type WorkspaceFoldersInitializeParams
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceFoldersInitializeParams>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceFoldersInitializeParams(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -19605,7 +20720,12 @@ type private IServerCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ServerCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IServerCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ServerCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20449,7 +21569,12 @@ type private IVersionedTextDocumentIdentifier =
 type VersionedTextDocumentIdentifier
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IVersionedTextDocumentIdentifier>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         VersionedTextDocumentIdentifier(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20508,7 +21633,12 @@ type private ISaveOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SaveOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISaveOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SaveOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20564,7 +21694,12 @@ type private IFileEvent =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileEvent private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileEvent>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileEvent(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20622,7 +21757,12 @@ type private IFileSystemWatcher =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileSystemWatcher private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileSystemWatcher>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileSystemWatcher(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20702,7 +21842,12 @@ type private IDiagnostic =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type Diagnostic private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnostic>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Diagnostic(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20916,7 +22061,12 @@ type private ICompletionContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CompletionContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -20991,7 +22141,12 @@ type private ICompletionItemLabelDetails =
 type CompletionItemLabelDetails private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionItemLabelDetails>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionItemLabelDetails(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21076,7 +22231,12 @@ type private IInsertReplaceEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type InsertReplaceEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInsertReplaceEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InsertReplaceEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21153,7 +22313,12 @@ type private ICompletionOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CompletionOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21305,7 +22470,12 @@ type private IHoverOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type HoverOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IHoverOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         HoverOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21364,7 +22534,12 @@ type private ISignatureHelpContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SignatureHelpContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelpContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelpContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21487,7 +22662,12 @@ type private ISignatureInformation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SignatureInformation private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21601,7 +22781,12 @@ type private ISignatureHelpOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SignatureHelpOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelpOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelpOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21699,7 +22884,12 @@ type private IDefinitionOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DefinitionOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDefinitionOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DefinitionOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21754,7 +22944,12 @@ type private IReferenceContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ReferenceContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<IReferenceContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ReferenceContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21800,7 +22995,12 @@ type private IReferenceOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ReferenceOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IReferenceOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ReferenceOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21854,7 +23054,12 @@ type private IDocumentHighlightOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentHighlightOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentHighlightOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentHighlightOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -21911,7 +23116,12 @@ type private IBaseSymbolInformation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type BaseSymbolInformation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IBaseSymbolInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         BaseSymbolInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22013,7 +23223,12 @@ type private IDocumentSymbolOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentSymbolOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentSymbolOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSymbolOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22097,7 +23312,12 @@ type private ICodeActionContext =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeActionContext private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeActionContext>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeActionContext(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22194,7 +23414,12 @@ type private ICodeActionOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeActionOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeActionOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeActionOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22291,7 +23516,12 @@ type private IWorkspaceSymbolOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WorkspaceSymbolOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceSymbolOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceSymbolOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22372,7 +23602,12 @@ type private ICodeLensOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeLensOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLensOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLensOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22450,7 +23685,12 @@ type private IDocumentLinkOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentLinkOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentLinkOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentLinkOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22531,7 +23771,12 @@ type private IFormattingOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FormattingOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFormattingOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FormattingOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22667,7 +23912,12 @@ type private IDocumentFormattingOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DocumentFormattingOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentFormattingOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentFormattingOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22723,7 +23973,12 @@ type private IDocumentRangeFormattingOptions =
 type DocumentRangeFormattingOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentRangeFormattingOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentRangeFormattingOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22803,7 +24058,12 @@ type private IDocumentOnTypeFormattingOptions =
 type DocumentOnTypeFormattingOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentOnTypeFormattingOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentOnTypeFormattingOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22869,7 +24129,12 @@ type private IRenameOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -22949,7 +24214,12 @@ type private IExecuteCommandOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ExecuteCommandOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IExecuteCommandOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ExecuteCommandOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23013,7 +24283,12 @@ type private ISemanticTokensLegend =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SemanticTokensLegend private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensLegend>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensLegend(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23073,7 +24348,12 @@ type private IOptionalVersionedTextDocumentIdentifier =
 type OptionalVersionedTextDocumentIdentifier
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IOptionalVersionedTextDocumentIdentifier>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         OptionalVersionedTextDocumentIdentifier(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23136,7 +24416,12 @@ type private IAnnotatedTextEdit =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type AnnotatedTextEdit private (backing: global.Amongonz.LspTypes.LspJsonBacking<IAnnotatedTextEdit>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         AnnotatedTextEdit(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23214,7 +24499,12 @@ type private IResourceOperation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ResourceOperation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IResourceOperation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ResourceOperation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23288,7 +24578,12 @@ type private ICreateFileOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CreateFileOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICreateFileOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CreateFileOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23365,7 +24660,12 @@ type private IRenameFileOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameFileOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameFileOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameFileOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23442,7 +24742,12 @@ type private IDeleteFileOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type DeleteFileOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeleteFileOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeleteFileOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23523,7 +24828,12 @@ type private IFileOperationPattern =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileOperationPattern private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationPattern>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationPattern(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23635,7 +24945,12 @@ type private IWorkspaceFullDocumentDiagnosticReport =
 type WorkspaceFullDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceFullDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceFullDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23748,7 +25063,12 @@ type private IWorkspaceUnchangedDocumentDiagnosticReport =
 type WorkspaceUnchangedDocumentDiagnosticReport
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceUnchangedDocumentDiagnosticReport>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceUnchangedDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23843,7 +25163,12 @@ type private INotebookCell =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type NotebookCell private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookCell>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookCell(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -23961,7 +25286,12 @@ type private INotebookCellArrayChange =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type NotebookCellArrayChange private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookCellArrayChange>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookCellArrayChange(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24040,7 +25370,12 @@ type private ISelectedCompletionInfo =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type SelectedCompletionInfo private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectedCompletionInfo>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectedCompletionInfo(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24105,7 +25440,12 @@ type private IClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24286,7 +25626,12 @@ type private ITextDocumentSyncOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type TextDocumentSyncOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentSyncOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentSyncOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24432,7 +25777,12 @@ type private INotebookDocumentSyncOptions =
 type NotebookDocumentSyncOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentSyncOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentSyncOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24501,7 +25851,12 @@ type private INotebookDocumentSyncRegistrationOptions =
 type NotebookDocumentSyncRegistrationOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentSyncRegistrationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentSyncRegistrationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24587,7 +25942,12 @@ type private IWorkspaceFoldersServerCapabilities =
 type WorkspaceFoldersServerCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceFoldersServerCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceFoldersServerCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24672,7 +26032,12 @@ type private IFileOperationOptions =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type FileOperationOptions private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24848,7 +26213,12 @@ type private ICodeDescription =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type CodeDescription private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeDescription>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeDescription(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24898,7 +26268,12 @@ type private IDiagnosticRelatedInformation =
 type DiagnosticRelatedInformation
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticRelatedInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticRelatedInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -24961,7 +26336,12 @@ type private IParameterInformation =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ParameterInformation private (backing: global.Amongonz.LspTypes.LspJsonBacking<IParameterInformation>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ParameterInformation(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -25041,7 +26421,12 @@ type private INotebookCellTextDocumentFilter =
 type NotebookCellTextDocumentFilter
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookCellTextDocumentFilter>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookCellTextDocumentFilter(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -25115,7 +26500,12 @@ type private IFileOperationPatternOptions =
 type FileOperationPatternOptions
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationPatternOptions>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationPatternOptions(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -25170,7 +26560,12 @@ type private IExecutionSummary =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type ExecutionSummary private (backing: global.Amongonz.LspTypes.LspJsonBacking<IExecutionSummary>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ExecutionSummary(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -25255,7 +26650,12 @@ type private IWorkspaceClientCapabilities =
 type WorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -25690,7 +27090,12 @@ type private ITextDocumentClientCapabilities =
 type TextDocumentClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26474,7 +27879,12 @@ type private INotebookDocumentClientCapabilities =
 type NotebookDocumentClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26524,7 +27934,12 @@ type private IWindowClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type WindowClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWindowClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WindowClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26645,7 +28060,12 @@ type private IGeneralClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type GeneralClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IGeneralClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         GeneralClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26791,7 +28211,12 @@ type private IRelativePattern =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RelativePattern private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRelativePattern>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RelativePattern(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26850,7 +28275,12 @@ type private IWorkspaceEditClientCapabilities =
 type WorkspaceEditClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceEditClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceEditClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -26998,7 +28428,12 @@ type private IDidChangeConfigurationClientCapabilities =
 type DidChangeConfigurationClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeConfigurationClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeConfigurationClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27054,7 +28489,12 @@ type private IDidChangeWatchedFilesClientCapabilities =
 type DidChangeWatchedFilesClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDidChangeWatchedFilesClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DidChangeWatchedFilesClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27140,7 +28580,12 @@ type private IWorkspaceSymbolClientCapabilities =
 type WorkspaceSymbolClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IWorkspaceSymbolClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceSymbolClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27264,7 +28709,12 @@ type private IExecuteCommandClientCapabilities =
 type ExecuteCommandClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IExecuteCommandClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ExecuteCommandClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27320,7 +28770,12 @@ type private ISemanticTokensWorkspaceClientCapabilities =
 type SemanticTokensWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27382,7 +28837,12 @@ type private ICodeLensWorkspaceClientCapabilities =
 type CodeLensWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLensWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLensWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27455,7 +28915,12 @@ type private IFileOperationClientCapabilities =
 type FileOperationClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFileOperationClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FileOperationClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27648,7 +29113,12 @@ type private IInlineValueWorkspaceClientCapabilities =
 type InlineValueWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27712,7 +29182,12 @@ type private IInlayHintWorkspaceClientCapabilities =
 type InlayHintWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27776,7 +29251,12 @@ type private IDiagnosticWorkspaceClientCapabilities =
 type DiagnosticWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27841,7 +29321,12 @@ type private IFoldingRangeWorkspaceClientCapabilities =
 type FoldingRangeWorkspaceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRangeWorkspaceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRangeWorkspaceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -27908,7 +29393,12 @@ type private ITextDocumentSyncClientCapabilities =
 type TextDocumentSyncClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITextDocumentSyncClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentSyncClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28038,7 +29528,12 @@ type private ICompletionClientCapabilities =
 type CompletionClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICompletionClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CompletionClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28200,7 +29695,12 @@ type private IHoverClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type HoverClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IHoverClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         HoverClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28276,7 +29776,12 @@ type private ISignatureHelpClientCapabilities =
 type SignatureHelpClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISignatureHelpClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SignatureHelpClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28375,7 +29880,12 @@ type private IDeclarationClientCapabilities =
 type DeclarationClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDeclarationClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DeclarationClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28455,7 +29965,12 @@ type private IDefinitionClientCapabilities =
 type DefinitionClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDefinitionClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DefinitionClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28535,7 +30050,12 @@ type private ITypeDefinitionClientCapabilities =
 type TypeDefinitionClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeDefinitionClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeDefinitionClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28617,7 +30137,12 @@ type private IImplementationClientCapabilities =
 type ImplementationClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IImplementationClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ImplementationClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28698,7 +30223,12 @@ type private IReferenceClientCapabilities =
 type ReferenceClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IReferenceClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ReferenceClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28754,7 +30284,12 @@ type private IDocumentHighlightClientCapabilities =
 type DocumentHighlightClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentHighlightClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentHighlightClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28814,7 +30349,12 @@ type private IDocumentSymbolClientCapabilities =
 type DocumentSymbolClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentSymbolClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSymbolClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -28964,7 +30504,12 @@ type private ICodeActionClientCapabilities =
 type CodeActionClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeActionClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeActionClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29156,7 +30701,12 @@ type private ICodeLensClientCapabilities =
 type CodeLensClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICodeLensClientCapabilities>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CodeLensClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29213,7 +30763,12 @@ type private IDocumentLinkClientCapabilities =
 type DocumentLinkClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentLinkClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentLinkClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29293,7 +30848,12 @@ type private IDocumentColorClientCapabilities =
 type DocumentColorClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentColorClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentColorClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29351,7 +30911,12 @@ type private IDocumentFormattingClientCapabilities =
 type DocumentFormattingClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentFormattingClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentFormattingClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29408,7 +30973,12 @@ type private IDocumentRangeFormattingClientCapabilities =
 type DocumentRangeFormattingClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentRangeFormattingClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentRangeFormattingClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29490,7 +31060,12 @@ type private IDocumentOnTypeFormattingClientCapabilities =
 type DocumentOnTypeFormattingClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDocumentOnTypeFormattingClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentOnTypeFormattingClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29547,7 +31122,12 @@ type private IRenameClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type RenameClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRenameClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RenameClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29691,7 +31271,12 @@ type private IFoldingRangeClientCapabilities =
 type FoldingRangeClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IFoldingRangeClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         FoldingRangeClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29834,7 +31419,12 @@ type private ISelectionRangeClientCapabilities =
 type SelectionRangeClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISelectionRangeClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SelectionRangeClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -29896,7 +31486,12 @@ type private IPublishDiagnosticsClientCapabilities =
 type PublishDiagnosticsClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IPublishDiagnosticsClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PublishDiagnosticsClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30038,7 +31633,12 @@ type private ICallHierarchyClientCapabilities =
 type CallHierarchyClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ICallHierarchyClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         CallHierarchyClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30104,7 +31704,12 @@ type private ISemanticTokensClientCapabilities =
 type SemanticTokensClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ISemanticTokensClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         SemanticTokensClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30313,7 +31918,12 @@ type private ILinkedEditingRangeClientCapabilities =
 type LinkedEditingRangeClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ILinkedEditingRangeClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LinkedEditingRangeClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30372,7 +31982,12 @@ type private IMonikerClientCapabilities =
 [<global.FSharp.Core.Struct; global.System.Runtime.CompilerServices.IsReadOnly>]
 type MonikerClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMonikerClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MonikerClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30430,7 +32045,12 @@ type private ITypeHierarchyClientCapabilities =
 type TypeHierarchyClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<ITypeHierarchyClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TypeHierarchyClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30490,7 +32110,12 @@ type private IInlineValueClientCapabilities =
 type InlineValueClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineValueClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValueClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30549,7 +32174,12 @@ type private IInlayHintClientCapabilities =
 type InlayHintClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlayHintClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlayHintClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30626,7 +32256,12 @@ type private IDiagnosticClientCapabilities =
 type DiagnosticClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IDiagnosticClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DiagnosticClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30709,7 +32344,12 @@ type private IInlineCompletionClientCapabilities =
 type InlineCompletionClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IInlineCompletionClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineCompletionClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30768,7 +32408,12 @@ type private INotebookDocumentSyncClientCapabilities =
 type NotebookDocumentSyncClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<INotebookDocumentSyncClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentSyncClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30849,7 +32494,12 @@ type private IShowMessageRequestClientCapabilities =
 type ShowMessageRequestClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowMessageRequestClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowMessageRequestClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30902,7 +32552,12 @@ type private IShowDocumentClientCapabilities =
 type ShowDocumentClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IShowDocumentClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ShowDocumentClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -30953,7 +32608,12 @@ type private IRegularExpressionsClientCapabilities =
 type RegularExpressionsClientCapabilities
     private (backing: global.Amongonz.LspTypes.LspJsonBacking<IRegularExpressionsClientCapabilities>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         RegularExpressionsClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31030,7 +32690,12 @@ type private IMarkdownClientCapabilities =
 type MarkdownClientCapabilities private (backing: global.Amongonz.LspTypes.LspJsonBacking<IMarkdownClientCapabilities>)
     =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MarkdownClientCapabilities(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31121,7 +32786,12 @@ type Definition(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBacking
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Definition(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31142,7 +32812,12 @@ type LSPArray(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackingOb
     // Complex type kind: array.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LSPArray(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31161,7 +32836,12 @@ type LSPAny(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackingObj>
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LSPAny(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31175,7 +32855,12 @@ type Declaration(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackin
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         Declaration(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31204,7 +32889,12 @@ type InlineValue(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackin
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         InlineValue(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31224,7 +32914,12 @@ type DocumentDiagnosticReport(backing: global.Amongonz.LspTypes.LspJsonBacking<I
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31237,7 +32932,12 @@ type PrepareRenameResult(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJs
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         PrepareRenameResult(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31255,7 +32955,12 @@ type DocumentSelector(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonB
     // Complex type kind: array.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentSelector(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31268,7 +32973,12 @@ type ProgressToken(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBack
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         ProgressToken(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31287,7 +32997,12 @@ type WorkspaceDocumentDiagnosticReport(backing: global.Amongonz.LspTypes.LspJson
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         WorkspaceDocumentDiagnosticReport(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31302,7 +33017,12 @@ type TextDocumentContentChangeEvent(backing: global.Amongonz.LspTypes.LspJsonBac
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentContentChangeEvent(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31328,7 +33048,12 @@ type MarkedString(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBacki
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         MarkedString(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31345,7 +33070,12 @@ type DocumentFilter(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBac
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         DocumentFilter(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31360,7 +33090,12 @@ type LSPObject(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackingO
     // Complex type kind: map.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         LSPObject(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31376,7 +33111,12 @@ type GlobPattern(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJsonBackin
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         GlobPattern(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31405,7 +33145,12 @@ type TextDocumentFilter(backing: global.Amongonz.LspTypes.LspJsonBacking<ILspJso
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         TextDocumentFilter(global.Amongonz.LspTypes.LspJsonBacking.Element element)
@@ -31423,7 +33168,12 @@ type NotebookDocumentFilter(backing: global.Amongonz.LspTypes.LspJsonBacking<ILs
     // Complex type kind: or.
 
     member _.GetBacking() = backing
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member this.WriteTo(writer) =
+        (this :> ILspJsonBackingObj).WriteTo(writer)
 
     static member FromElement(element) =
         NotebookDocumentFilter(global.Amongonz.LspTypes.LspJsonBacking.Element element)

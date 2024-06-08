@@ -18,10 +18,14 @@ type LspJsonBacking<'Backing when 'Backing :> ILspJsonBackingObj> =
         | Element elem -> Element elem
         | Obj backingObj -> Obj(backingObj :> ILspJsonBackingObj)
 
+    interface ILspJsonBackingObj with
+        member backing.WriteTo(writer) =
+            match backing with
+            | Element elem -> elem.WriteTo(writer)
+            | Obj backingObj -> backingObj.WriteTo(writer)
+
     member backing.WriteTo(writer) =
-        match backing with
-        | Element elem -> elem.WriteTo(writer)
-        | Obj backingObj -> backingObj.WriteTo(writer)
+        (backing :> ILspJsonBackingObj).WriteTo(writer)
 
     member backing.GetElement() =
         match backing with
@@ -40,7 +44,12 @@ type private ILspString =
 [<Struct; IsReadOnly>]
 type LspString private (backing: LspJsonBacking<ILspString>) =
     member _.GetBacking() = backing.Boxed
-    member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    interface ILspJsonBackingObj with
+        member _.WriteTo(writer) = backing.WriteTo(writer)
+
+    member lspString.WriteTo(writer) =
+        (lspString :> ILspJsonBackingObj).WriteTo(writer)
 
     member _.GetString() =
         match backing with
